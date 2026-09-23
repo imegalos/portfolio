@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador Procedural de Dungeons | Technical Artist Portfolio</title>
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Character Customization | Technical Artist Portfolio</title>
     <link rel="stylesheet" href="main/style.css">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -13,13 +14,13 @@
     <!-- Header / Navbar -->
     <header class="header">
         <div class="container nav-container">
-            <a href="main.html" class="logo">&lt;<span class="highlight">TechArt</span> /&gt;</a>
+            <a href="index.html" class="logo">&lt;<span class="highlight">TechArt</span> /&gt;</a>
             <nav class="nav-menu">
-                <a href="main.html#projects" class="nav-link">
+                <a href="index.html#projects" class="nav-link">
                     <span class="lang-pt">&larr; Voltar aos Projetos</span>
                     <span class="lang-en">&larr; Back to Projects</span>
                 </a>
-                <a href="main.html#contact" class="nav-link btn-contact">
+                <a href="index.html#contact" class="nav-link btn-contact">
                     <span class="lang-pt">Contato</span>
                     <span class="lang-en">Contact</span>
                 </a>
@@ -31,161 +32,125 @@
     <!-- Conteúdo Principal -->
     <main class="container project-detail-content" style="padding-top: 120px; padding-bottom: 80px;">
         <header class="detail-header" style="text-align: center; margin-bottom: 40px;">
-            <span class="card-tag" style="font-family: var(--font-mono); color: var(--accent-purple); font-size: 0.9rem;">Unreal Engine Blueprint / Procedural Generation & Multiplayer</span>
+            <span class="card-tag" style="font-family: var(--font-mono); color: var(--accent-purple); font-size: 0.9rem;">Unreal Engine / Character Tech, Data-Driven UI & Shaders</span>
             <h1 class="hero-title" style="font-size: 2.5rem; color: var(--text-heading); margin: 15px 0;">
-                <span class="lang-pt">Gerador Procedural de Dungeons em Blueprint</span>
-                <span class="lang-en">Procedural Dungeon Generator in Blueprint</span>
+                <span class="lang-pt">Sistema de Customização de Personagens Data-Driven & UI Dinâmica</span>
+                <span class="lang-en">Data-Driven Character Customization & Dynamic UI System</span>
             </h1>
             <p class="hero-subtitle" style="max-width: 800px; margin: 0 auto; color: #8b949e;">
-                <span class="lang-pt">Sistema de geração procedural determinística de níveis focado em jogos multiplayer, construindo dungeons complexas de forma modular, com alta rejogabilidade e performance em rede.</span>
-                <span class="lang-en">Deterministic procedural dungeon generation system designed for multiplayer titles, assembling modular dungeons with high replayability and networked performance.</span>
-                
-                <div style="margin-top: 15px;">
-                    <span class="lang-pt">Essa ferramenta é a geração básica para o Croak Tales:</span>
-                    <span class="lang-en">This tool serves as the core level generation framework for Croak Tales:</span>
-                </div>
-
-                <div class="steam-embed-container" style="margin-top: 15px;">
-                    <div class="steam-embed-card">
-                        <a href="https://store.steampowered.com/app/3880860/Croak_Tales_Deep_Dungeons/" target="_blank" rel="noopener noreferrer" class="steam-embed-banner">
-                            <img src="imgs/header.jpg" alt="Croak Tales: Deep Dungeons" class="steam-embed-img">
-                        </a>
-                        <div class="steam-embed-content">
-                            <div class="steam-embed-main">
-                                <a href="https://store.steampowered.com/app/3880860/Croak_Tales_Deep_Dungeons/" target="_blank" rel="noopener noreferrer" class="steam-embed-title">
-                                    Croak Tales: Deep Dungeons
-                                </a>
-                                <p class="steam-embed-description">
-                                    An extraction horror co-op game set in deep procedural dungeons.
-                                </p>
-                            </div>
-                            <div class="steam-embed-footer">
-                                <div class="steam-price-box">
-                                    <span class="steam-status-tag">Early Access</span>
-                                </div>
-                                <a href="https://store.steampowered.com/app/3880860/Croak_Tales_Deep_Dungeons/" target="_blank" rel="noopener noreferrer" class="steam-buy-btn">
-                                    <svg class="steam-logo-icon" viewBox="0 0 24 24" width="16" height="16">
-                                        <path fill="currentColor" d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.029 4.524 4.524s-2.03 4.524-4.524 4.524h-.105l-4.076 2.911c0 .052.005.105.005.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.008-1.154-3.326-2.693L.505 14.88C1.886 20.155 6.476 24 11.979 24c6.627 0 12-5.373 12-12s-5.373-12-12-12z"/>
-                                    </svg>
-                                    <span class="lang-pt">Ver na Loja da Steam</span>
-                                    <span class="lang-en">View on Steam Store</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <span class="lang-pt">Sistema modular de personalização para gerenciamento de variações anatômicas, troca de partes do corpo e alterações de cores via Custom Primitive Data, com UI instanciada dinamicamente a partir de DataAssets.</span>
+                <span class="lang-en">Modular character customization system managing anatomical variations, body part swaps, and color parameters via Custom Primitive Data, featuring DataAsset-driven dynamic UI.</span>
             </p>
         </header>
 
-        <!-- Container para imagem do projeto -->
-        <section class="project-media-container" style="margin: 40px 0; text-align: center; display: flex; justify-content: center; gap: 15px;">
-            <img src="imgs/dungeonGenerator.gif" alt="Demonstração do Gerador Procedural de Dungeons" class="main-image">
-            <img src="imgs/dungeonGenerator_2.gif" alt="Demonstração do Gerador Procedural de Dungeons" class="main-image">
+        <!-- Container da Mídia do Projeto -->
+        <section class="project-media-container" style="margin: 40px 0; text-align: center; display: flex; justify-content: center;">
+            <div style="position: relative; width: 100%; max-width: 800px; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <iframe 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                    src="https://www.youtube-nocookie.com/embed/yGBrY00D-zw?autoplay=1&mute=1&controls=0&loop=1&playlist=yGBrY00D-zw"
+                    title="Demonstração Character Customization" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
         </section>
 
-        <!-- Funcionalidades & Lógica -->
+        <!-- Funcionalidades & Lógica da Arquitetura -->
         <section class="detail-section" style="background-color: var(--card-bg); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 40px;">
             <h2 style="color: var(--text-heading); margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
-                <span class="lang-pt">Fluxo de Funcionalidades & Lógica da Arquitetura</span>
-                <span class="lang-en">Feature Pipeline & Architecture</span>
+                <span class="lang-pt">Como Funciona & Lógica da Arquitetura</span>
+                <span class="lang-en">How It Works & System Architecture</span>
             </h2>
             
             <div style="display: grid; gap: 25px;">
                 <div>
                     <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
-                        <span class="lang-pt">1. Geração Determinística por Seed (DataAsset Driver)</span>
-                        <span class="lang-en">1. Seed-Based Deterministic Generation (DataAsset Driven)</span>
+                        <span class="lang-pt">1. Centralização Estruturada em DataAsset</span>
+                        <span class="lang-en">1. DataAsset Centralization</span>
                     </h3>
                     <p>
-                        <span class="lang-pt">O layout é construído com base em um DataAsset que armazena a biblioteca de salas (tiles/sub-levels) e uma Seed numérica, permitindo bilhões de combinações de mapas totalmente reproduzíveis e previsíveis para matchmaking ou daily runs.</span>
-                        <span class="lang-en">Level layouts build from DataAssets containing room libraries (tiles/sub-levels) driven by numeric Seeds, yielding billions of reproducible map layouts.</span>
+                        <span class="lang-pt">Todas as variações visuais — incluindo as malhas de cada parte do corpo (cabeça, tronco, membros, acessórios) separadas por biotipo — são parametrizadas dentro de um DataAsset. Ele atua como a "fonte única da verdade" (single source of truth) para os dados estéticos dos personagens.</span>
+                        <span class="lang-en">All visual variations—including body parts (head, torso, limbs, accessories) categorized by body types—are defined inside a DataAsset acting as a single source of truth.</span>
                     </p>
                 </div>
 
                 <div>
                     <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
-                        <span class="lang-pt">2. Conexão Modular de Salas (Encaixe de Soquetes)</span>
-                        <span class="lang-en">2. Modular Room Connections (Socket Matching)</span>
+                        <span class="lang-pt">2. Geração Automática de UI (Dynamic Widget Spawning)</span>
+                        <span class="lang-en">2. Dynamic UI Generation (Widget Spawning)</span>
                     </h3>
                     <p>
-                        <span class="lang-pt">As salas são carregadas e encaixadas como um quebra-cabeça 3D através de pontos de conexão (Sockets/Anchors), verificando a compatibilidade de aberturas e limites do grid para evitar sobreposição ou rotas sem saída.</span>
-                        <span class="lang-en">Rooms load and snap like 3D puzzle pieces using connection points (Sockets/Anchors), validating grid bounds and doorway compatibility to prevent overlaps or dead ends.</span>
+                        <span class="lang-pt">A interface do usuário (UMG) se adapta dinamicamente aos dados. O sistema lê cada array de itens e categorias presente no DataAsset e instancia automaticamente os botões correspondentes na tela. Adicionar ou remover uma opção de customização no DataAsset atualiza a UI instantaneamente sem necessidade de criar botões manualmente no UMG.</span>
+                        <span class="lang-en">The UI (UMG) adapts dynamically to data. The system reads item arrays in the DataAsset and automatically spawns matching UI buttons. Adding options to DataAssets immediately updates menus without editing UMG layouts.</span>
+                    </p>
+                    <section class="project-media-container" style="margin: 40px 0; text-align: center; display: flex; justify-content: center;">
+                        <img src="imgs/charcustomization_dataasset.png" alt="Demonstração do DataAsset" class="project-image" style="width: 600px; max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.3); object-fit: cover;">
+                    </section>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">3. Aplicação Dinâmica por Evento de Clique</span>
+                        <span class="lang-en">3. Dynamic Application via UI Events</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Ao clicar nos botões gerados dinamicamente, a programação acessa o respectivo índice do array no DataAsset e define instantaneamente as novas malhas e parâmetros de cor no ator do personagem.</span>
+                        <span class="lang-en">Clicking dynamically generated UI buttons queries corresponding DataAsset array indices and instantly updates character meshes and parameters.</span>
                     </p>
                 </div>
 
                 <div>
                     <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
-                        <span class="lang-pt">3. Injeção de Detalhes Locais (EnvironmentManager)</span>
-                        <span class="lang-en">3. Local Detail Injection (EnvironmentManager)</span>
+                        <span class="lang-pt">4. Recolorização Otimizada via Custom Primitive Data (CPD)</span>
+                        <span class="lang-en">4. Optimized Recoloring via Custom Primitive Data (CPD)</span>
                     </h3>
                     <p>
-                        <span class="lang-pt">Após estruturar o layout das salas, uma ferramenta dedicada (EnvironmentManager) lê a posição e quadrante de cada setor para spawnar módulos internos e adereços contextuais (props/decorations) que variam com a mesma Seed, garantindo variedade visual mesmo em salas com a mesma geometria base.</span>
-                        <span class="lang-en">Once structural room layouts assemble, the EnvironmentManager populates sub-quadrants with contextual props and decor driven by the same Seed.</span>
-                    </p>
-                </div>
-
-                <div>
-                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
-                        <span class="lang-pt">4. População Dinâmica de Gameplay (Game Logic & Populator)</span>
-                        <span class="lang-en">4. Dynamic Gameplay Population</span>
-                    </h3>
-                    <p>
-                        <span class="lang-pt">Com o mapa e a estética definidos, o sistema executa uma varredura para resolver os componentes do jogo: spawna portas interativas nos pontos de conexão, posiciona pontos de surgimento de IAs, caixas de saque e gatilhos de eventos.</span>
-                        <span class="lang-en">After geometry and visuals lock in, population algorithms place interactive doors, AI spawners, loot containers, and gameplay triggers.</span>
-                    </p>
-                </div>
-
-                <div>
-                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
-                        <span class="lang-pt">5. Otimização Multiplayer & Level Streaming (Server-Authoritative)</span>
-                        <span class="lang-en">5. Multiplayer Optimization & Level Streaming</span>
-                    </h3>
-                    <p>
-                        <span class="lang-pt">Toda a lógica de geração roda no Servidor (garantindo autoridade e prevenindo cheating). Uma vez definido o layout, os Clients carregam as salas via Level Streaming (assíncrono na memória), eliminando travamentos de carregamento (hitchs/stuttering) durante a partida e sincronizando perfeitamente o estado do nível para todos os jogadores.</span>
-                        <span class="lang-en">Generation runs Server-side to maintain authority. Once layout locks, clients load room sub-levels asynchronously via Level Streaming, eliminating hitching and keeping state synchronized.</span>
+                        <span class="lang-pt">Para trocas de cores e recolors, o sistema não cria e nem instancia novos Material Instances na memória (o que geraria draw calls extras e alocação pesada). Em ver disso, envia os dados de cor diretamente para o shader do objeto via Custom Primitive Data, garantindo variações ilimitadas com impacto zero na GPU.</span>
+                        <span class="lang-en">To handle color swaps, the system avoids instantiating new Material Instances (which increase draw calls and memory). Instead, color vectors feed directly to shaders via Custom Primitive Data with zero extra GPU cost.</span>
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- Destaques de Produção -->
+        <!-- Pontos Fortes & Impacto na Produção -->
         <section class="detail-section" style="background-color: var(--bg-alt); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 40px;">
             <h2 style="color: var(--text-heading); margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
-                <span class="lang-pt">Destaques de Produção & Boas Práticas</span>
-                <span class="lang-en">Production Highlights & Best Practices</span>
+                <span class="lang-pt">Pontos Fortes & Impacto na Produção (Artist Workflow)</span>
+                <span class="lang-en">Production Impact & Artist Workflow</span>
             </h2>
             
             <ul style="list-style-type: none; padding-left: 0; display: grid; gap: 15px;">
                 <li style="position: relative; padding-left: 25px;">
                     <strong style="color: var(--text-heading);">
-                        <span class="lang-pt">Arquitetura Orientada a Dados (Data-Driven):</span>
-                        <span class="lang-en">Data-Driven Architecture:</span>
+                        <span class="lang-pt">Interface 100% Automatizada e Escalável:</span>
+                        <span class="lang-en">Fully Automated & Scalable UI:</span>
                     </strong> 
-                    <span class="lang-pt">O uso de DataAssets permite que level designers criem novos conjuntos de salas ou biomas sem precisar alterar o código da Blueprint.</span>
-                    <span class="lang-en">DataAssets allow level designers to add new room sets or biomes without modifying core Blueprint logic.</span>
+                    <span class="lang-pt">Os artistas e designers não precisam abrir o UMG ou alterar a lógica de Blueprints para adicionar novos acessórios, opções ou cores. Basta inserir um novo item no array do DataAsset e o botão aparecerá pronto e funcional no menu de customização.</span>
+                    <span class="lang-en">Artists add items directly to DataAsset arrays without touching UMG graphs; matching menu buttons populate automatically.</span>
                 </li>
                 <li style="position: relative; padding-left: 25px;">
                     <strong style="color: var(--text-heading);">
-                        <span class="lang-pt">Network-Ready (Sincronização Eficiente):</span>
-                        <span class="lang-en">Network-Ready (Bandwidth Efficient):</span>
+                        <span class="lang-pt">Otimização Extrema de Performance (VRAM & Draw Calls):</span>
+                        <span class="lang-en">Maximum Performance Optimization (VRAM & Draw Calls):</span>
                     </strong> 
-                    <span class="lang-pt">Em vez de replicar a posição de centenas de objetos pela rede, o servidor envia apenas a Seed e a estrutura de salas, deixando a montagem idêntica rodar localmente no cliente com consumo mínimo de banda (bandwidth).</span>
-                    <span class="lang-en">Instead of replicating hundreds of object transforms, the server sends only the Seed and room array, saving bandwidth.</span>
+                    <span class="lang-pt">O uso de Custom Primitive Data para as variações de cores permite que múltiplos personagens com paletas de cores totalmente diferentes compartilhem o exato mesmo material base na GPU, sem aumentar o consumo de memória.</span>
+                    <span class="lang-en">CPD usage allows characters with distinct color palettes to share base material instances, saving VRAM and batching draw calls.</span>
                 </li>
                 <li style="position: relative; padding-left: 25px;">
                     <strong style="color: var(--text-heading);">
-                        <span class="lang-pt">Escalabilidade e Desempenho:</span>
-                        <span class="lang-en">Scalability & Performance:</span>
+                        <span class="lang-pt">Iteração Visual Direta na Engine:</span>
+                        <span class="lang-en">Direct In-Engine Iteration:</span>
                     </strong> 
-                    <span class="lang-pt">Carregamento inteligente via streaming e descarte de processamento desnecessário na GPU/CPU durante a fase de montagem do nível.</span>
-                    <span class="lang-en">Smart streaming and cull passes keep CPU/GPU frame times optimal during room generation.</span>
+                    <span class="lang-pt">Permite testar e visualizar novas combinações e biotipos diretamente em tempo de execução de forma fluida, acelerando o ciclo de feedback entre as equipes de arte e game design.</span>
+                    <span class="lang-en">Enables testing and previewing body types and item combinations dynamically during runtime.</span>
                 </li>
             </ul>
         </section>
 
         <!-- Ações do Rodapé do Projeto -->
         <div style="text-align: center; margin-top: 50px;">
-            <a href="main.html#projects" class="btn secondary-btn">
+            <a href="index.html#projects" class="btn secondary-btn">
                 <span class="lang-pt">&larr; Voltar para a Galeria</span>
                 <span class="lang-en">&larr; Back to Gallery</span>
             </a>
