@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador Procedural de Dungeons | Technical Artist Portfolio</title>
+    <link rel="stylesheet" href="main/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="main.html" class="logo">&lt;<span class="highlight">TechArt</span> /&gt;</a>
+            <nav class="nav-menu">
+                <a href="main.html#projects" class="nav-link">
+                    <span class="lang-pt">&larr; Voltar aos Projetos</span>
+                    <span class="lang-en">&larr; Back to Projects</span>
+                </a>
+                <a href="main.html#contact" class="nav-link btn-contact">
+                    <span class="lang-pt">Contato</span>
+                    <span class="lang-en">Contact</span>
+                </a>
+                <button class="lang-toggle-btn nav-link" onclick="toggleLanguage()" style="background:none; border:1px solid var(--border-color); padding: 4px 10px; border-radius: 4px; cursor: pointer; color: var(--text-heading); font-weight: bold; margin-left: 10px;">EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container project-detail-content" style="padding-top: 120px; padding-bottom: 80px;">
+        <header class="detail-header" style="text-align: center; margin-bottom: 40px;">
+            <span class="card-tag" style="font-family: var(--font-mono); color: var(--accent-purple); font-size: 0.9rem;">Unreal Engine Blueprint / Procedural Generation & Multiplayer</span>
+            <h1 class="hero-title" style="font-size: 2.5rem; color: var(--text-heading); margin: 15px 0;">
+                <span class="lang-pt">Gerador Procedural de Dungeons em Blueprint</span>
+                <span class="lang-en">Procedural Dungeon Generator in Blueprint</span>
+            </h1>
+            <p class="hero-subtitle" style="max-width: 800px; margin: 0 auto; color: #8b949e;">
+                <span class="lang-pt">Sistema de geração procedural determinística de níveis focado em jogos multiplayer, construindo dungeons complexas de forma modular, com alta rejogabilidade e performance em rede.</span>
+                <span class="lang-en">Deterministic procedural dungeon generation system designed for multiplayer titles, assembling modular dungeons with high replayability and networked performance.</span>
+                
+                <div style="margin-top: 15px;">
+                    <span class="lang-pt">Essa ferramenta é a geração básica para o Croak Tales:</span>
+                    <span class="lang-en">This tool serves as the core level generation framework for Croak Tales:</span>
+                </div>
+
+                <div class="steam-embed-container" style="margin-top: 15px;">
+                    <div class="steam-embed-card">
+                        <a href="https://store.steampowered.com/app/3880860/Croak_Tales_Deep_Dungeons/" target="_blank" rel="noopener noreferrer" class="steam-embed-banner">
+                            <img src="imgs/header.jpg" alt="Croak Tales: Deep Dungeons" class="steam-embed-img">
+                        </a>
+                        <div class="steam-embed-content">
+                            <div class="steam-embed-main">
+                                <a href="https://store.steampowered.com/app/3880860/Croak_Tales_Deep_Dungeons/" target="_blank" rel="noopener noreferrer" class="steam-embed-title">
+                                    Croak Tales: Deep Dungeons
+                                </a>
+                                <p class="steam-embed-description">
+                                    An extraction horror co-op game set in deep procedural dungeons.
+                                </p>
+                            </div>
+                            <div class="steam-embed-footer">
+                                <div class="steam-price-box">
+                                    <span class="steam-status-tag">Early Access</span>
+                                </div>
+                                <a href="https://store.steampowered.com/app/3880860/Croak_Tales_Deep_Dungeons/" target="_blank" rel="noopener noreferrer" class="steam-buy-btn">
+                                    <svg class="steam-logo-icon" viewBox="0 0 24 24" width="16" height="16">
+                                        <path fill="currentColor" d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.029 4.524 4.524s-2.03 4.524-4.524 4.524h-.105l-4.076 2.911c0 .052.005.105.005.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.008-1.154-3.326-2.693L.505 14.88C1.886 20.155 6.476 24 11.979 24c6.627 0 12-5.373 12-12s-5.373-12-12-12z"/>
+                                    </svg>
+                                    <span class="lang-pt">Ver na Loja da Steam</span>
+                                    <span class="lang-en">View on Steam Store</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </p>
+        </header>
+
+        <!-- Container para imagem do projeto -->
+        <section class="project-media-container" style="margin: 40px 0; text-align: center; display: flex; justify-content: center; gap: 15px;">
+            <img src="imgs/dungeonGenerator.gif" alt="Demonstração do Gerador Procedural de Dungeons" class="main-image">
+            <img src="imgs/dungeonGenerator_2.gif" alt="Demonstração do Gerador Procedural de Dungeons" class="main-image">
+        </section>
+
+        <!-- Funcionalidades & Lógica -->
+        <section class="detail-section" style="background-color: var(--card-bg); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 40px;">
+            <h2 style="color: var(--text-heading); margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                <span class="lang-pt">Fluxo de Funcionalidades & Lógica da Arquitetura</span>
+                <span class="lang-en">Feature Pipeline & Architecture</span>
+            </h2>
+            
+            <div style="display: grid; gap: 25px;">
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">1. Geração Determinística por Seed (DataAsset Driver)</span>
+                        <span class="lang-en">1. Seed-Based Deterministic Generation (DataAsset Driven)</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">O layout é construído com base em um DataAsset que armazena a biblioteca de salas (tiles/sub-levels) e uma Seed numérica, permitindo bilhões de combinações de mapas totalmente reproduzíveis e previsíveis para matchmaking ou daily runs.</span>
+                        <span class="lang-en">Level layouts build from DataAssets containing room libraries (tiles/sub-levels) driven by numeric Seeds, yielding billions of reproducible map layouts.</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">2. Conexão Modular de Salas (Encaixe de Soquetes)</span>
+                        <span class="lang-en">2. Modular Room Connections (Socket Matching)</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">As salas são carregadas e encaixadas como um quebra-cabeça 3D através de pontos de conexão (Sockets/Anchors), verificando a compatibilidade de aberturas e limites do grid para evitar sobreposição ou rotas sem saída.</span>
+                        <span class="lang-en">Rooms load and snap like 3D puzzle pieces using connection points (Sockets/Anchors), validating grid bounds and doorway compatibility to prevent overlaps or dead ends.</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">3. Injeção de Detalhes Locais (EnvironmentManager)</span>
+                        <span class="lang-en">3. Local Detail Injection (EnvironmentManager)</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Após estruturar o layout das salas, uma ferramenta dedicada (EnvironmentManager) lê a posição e quadrante de cada setor para spawnar módulos internos e adereços contextuais (props/decorations) que variam com a mesma Seed, garantindo variedade visual mesmo em salas com a mesma geometria base.</span>
+                        <span class="lang-en">Once structural room layouts assemble, the EnvironmentManager populates sub-quadrants with contextual props and decor driven by the same Seed.</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">4. População Dinâmica de Gameplay (Game Logic & Populator)</span>
+                        <span class="lang-en">4. Dynamic Gameplay Population</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Com o mapa e a estética definidos, o sistema executa uma varredura para resolver os componentes do jogo: spawna portas interativas nos pontos de conexão, posiciona pontos de surgimento de IAs, caixas de saque e gatilhos de eventos.</span>
+                        <span class="lang-en">After geometry and visuals lock in, population algorithms place interactive doors, AI spawners, loot containers, and gameplay triggers.</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">5. Otimização Multiplayer & Level Streaming (Server-Authoritative)</span>
+                        <span class="lang-en">5. Multiplayer Optimization & Level Streaming</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Toda a lógica de geração roda no Servidor (garantindo autoridade e prevenindo cheating). Uma vez definido o layout, os Clients carregam as salas via Level Streaming (assíncrono na memória), eliminando travamentos de carregamento (hitchs/stuttering) durante a partida e sincronizando perfeitamente o estado do nível para todos os jogadores.</span>
+                        <span class="lang-en">Generation runs Server-side to maintain authority. Once layout locks, clients load room sub-levels asynchronously via Level Streaming, eliminating hitching and keeping state synchronized.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destaques de Produção -->
+        <section class="detail-section" style="background-color: var(--bg-alt); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 40px;">
+            <h2 style="color: var(--text-heading); margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                <span class="lang-pt">Destaques de Produção & Boas Práticas</span>
+                <span class="lang-en">Production Highlights & Best Practices</span>
+            </h2>
+            
+            <ul style="list-style-type: none; padding-left: 0; display: grid; gap: 15px;">
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Arquitetura Orientada a Dados (Data-Driven):</span>
+                        <span class="lang-en">Data-Driven Architecture:</span>
+                    </strong> 
+                    <span class="lang-pt">O uso de DataAssets permite que level designers criem novos conjuntos de salas ou biomas sem precisar alterar o código da Blueprint.</span>
+                    <span class="lang-en">DataAssets allow level designers to add new room sets or biomes without modifying core Blueprint logic.</span>
+                </li>
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Network-Ready (Sincronização Eficiente):</span>
+                        <span class="lang-en">Network-Ready (Bandwidth Efficient):</span>
+                    </strong> 
+                    <span class="lang-pt">Em vez de replicar a posição de centenas de objetos pela rede, o servidor envia apenas a Seed e a estrutura de salas, deixando a montagem idêntica rodar localmente no cliente com consumo mínimo de banda (bandwidth).</span>
+                    <span class="lang-en">Instead of replicating hundreds of object transforms, the server sends only the Seed and room array, saving bandwidth.</span>
+                </li>
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Escalabilidade e Desempenho:</span>
+                        <span class="lang-en">Scalability & Performance:</span>
+                    </strong> 
+                    <span class="lang-pt">Carregamento inteligente via streaming e descarte de processamento desnecessário na GPU/CPU durante a fase de montagem do nível.</span>
+                    <span class="lang-en">Smart streaming and cull passes keep CPU/GPU frame times optimal during room generation.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Ações do Rodapé do Projeto -->
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="main.html#projects" class="btn secondary-btn">
+                <span class="lang-pt">&larr; Voltar para a Galeria</span>
+                <span class="lang-en">&larr; Back to Gallery</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <span class="lang-pt">&copy; 2026 Technical Artist. Todos os direitos reservados.</span>
+                <span class="lang-en">&copy; 2026 Technical Artist. All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="main/script.js"></script>
+</body>
+</html>

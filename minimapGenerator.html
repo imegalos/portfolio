@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniMap Generator | Technical Artist Portfolio</title>
+    <link rel="stylesheet" href="main/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="main.html" class="logo">&lt;<span class="highlight">TechArt</span> /&gt;</a>
+            <nav class="nav-menu">
+                <a href="main.html#projects" class="nav-link">
+                    <span class="lang-pt">&larr; Voltar aos Projetos</span>
+                    <span class="lang-en">&larr; Back to Projects</span>
+                </a>
+                <a href="main.html#contact" class="nav-link btn-contact">
+                    <span class="lang-pt">Contato</span>
+                    <span class="lang-en">Contact</span>
+                </a>
+                <button class="lang-toggle-btn nav-link" onclick="toggleLanguage()" style="background:none; border:1px solid var(--border-color); padding: 4px 10px; border-radius: 4px; cursor: pointer; color: var(--text-heading); font-weight: bold; margin-left: 10px;">EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container project-detail-content" style="padding-top: 120px; padding-bottom: 80px;">
+        <header class="detail-header" style="text-align: center; margin-bottom: 40px;">
+            <span class="card-tag" style="font-family: var(--font-mono); color: var(--accent-purple); font-size: 0.9rem;">Unreal Engine / Tooling, Editor Automation & UI</span>
+            <h1 class="hero-title" style="font-size: 2.5rem; color: var(--text-heading); margin: 15px 0;">
+                <span class="lang-pt">Gerador de Minimapa com Processamento Automático de Quadrantes</span>
+                <span class="lang-en">Minimap Generator with Automated Quadrant Processing</span>
+            </h1>
+            <p class="hero-subtitle" style="max-width: 800px; margin: 0 auto; color: #8b949e;">
+                <span class="lang-pt">Ferramenta de captura offline no Editor e sistema de UI para minimapas de alta performance em dungeons procedurais.</span>
+                <span class="lang-en">Offline Editor capture tool and UI framework for high-performance minimaps in procedural dungeons.</span>
+            </p>
+        </header>
+
+        <!-- Container de Imagem / Mídia do Projeto -->
+        <section class="project-media-container" style="margin: 40px 0; text-align: center; display: flex; justify-content: center;">
+            <div style="position: relative; width: 100%; max-width: 800px; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <iframe 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                    src="https://www.youtube-nocookie.com/embed/vT1VJoemyyg?autoplay=1&mute=1&controls=0&loop=1&playlist=vT1VJoemyyg" 
+                    title="Demonstração MiniMap Generator" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Funcionalidades & Lógica da Arquitetura -->
+        <section class="detail-section" style="background-color: var(--card-bg); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 40px;">
+            <h2 style="color: var(--text-heading); margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                <span class="lang-pt">Como Funciona & Lógica da Arquitetura</span>
+                <span class="lang-en">How It Works & Architectural Logic</span>
+            </h2>
+            
+            <div style="display: grid; gap: 25px;">
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">1. Pipeline de Captura com "Um Clique" (Artist-Friendly Workflow)</span>
+                        <span class="lang-en">1. One-Click Capture Pipeline (Artist-Friendly Workflow)</span>
+                    </h3>
+                    <img src="imgs/minimapGenerator.gif" alt="Demonstração do Gerador de Minimapa" class="project-image" style="width: 800px; max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.3); object-fit: cover;">
+                    <p style="margin-top: 10px;">
+                        <span class="lang-pt">Sempre que os Level Artists alteram o visual de um quadrante, eles acionam a ferramenta diretamente no Editor com apenas um clique. A ferramenta se encarrega de ler o conjunto de salas, isolar a geometria necessária e posicionar a câmera ortográfica na altura e ângulo corretos para renderizar a imagem estática top-down.</span>
+                        <span class="lang-en">Whenever Level Artists update quadrant visuals, they trigger the tool directly in the Editor with a single click. The tool isolates necessary geometry and aligns an orthographic camera at the exact height and angle to render static top-down captures.</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">2. Isolamento de Quadrantes no Ponto Origem (0,0,0)</span>
+                        <span class="lang-en">2. Quadrant Isolation at Origin (0,0,0)</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Como todas as salas residem nas mesmas coordenadas bases no Editor para alimentação do sistema procedural, a ferramenta ativa e desativa a visibilidade dos blocos individualmente para evitar sobreposição de geometria durante o processo de bake, exportando cada imagem devidamente rotulada e otimizada.</span>
+                        <span class="lang-en">Because all room tiles share base coordinates in the Editor for procedural generation, the tool toggles individual block visibility to avoid geometry overlap during baking, exporting cleanly labeled and optimized renders.</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">3. Injeção de Atores Dinâmicos em Tempo de Execução</span>
+                        <span class="lang-en">3. Dynamic Actor Injection at Runtime</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">As imagens estáticas geradas servem apenas como o fundo do minimapa. Atores em movimento (jogadores, IAs e Itens) são registrados dinamicamente via código e desenhados como widgets e ícones sobre a imagem no HUD, calculando suas posições finais no mapa procedural montado pelo Dungeon Generator.</span>
+                        <span class="lang-en">Static renders serve strictly as minimap background tiles. Moving actors (players, AI, items) are registered via code and rendered as dynamic HUD widgets, projecting their relative positions on the procedurally generated map layout.</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">4. Gerenciamento Eficiente de Memória e Processamento</span>
+                        <span class="lang-en">4. Efficient Memory & Processing Management</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Como todas as imagens são estáticas, a engine não precisa ficar capturando imagens em realtime; todos os quadrantes têm o seu posicionamento pré-definido em uma Widget, e a única coisa que se move é a posição do player em relação aos quadrantes estáticos.</span>
+                        <span class="lang-en">Since background images are static, the engine avoids runtime scene capture passes. Quadrants hold pre-calculated layout transforms within UI widgets, where only player/entity coordinates update dynamically.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destaques de Produção & Otimização -->
+        <section class="detail-section" style="background-color: var(--bg-alt); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 40px;">
+            <h2 style="color: var(--text-heading); margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                <span class="lang-pt">Destaques de Produção & Otimização</span>
+                <span class="lang-en">Production & Optimization Highlights</span>
+            </h2>
+            
+            <ul style="list-style-type: none; padding-left: 0; display: grid; gap: 15px;">
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Automação Total de Arte:</span>
+                        <span class="lang-en">Full Art Automation:</span>
+                    </strong> 
+                    <span class="lang-pt">Elimina a necessidade de organizar manualmente os blocos no espaço do Editor ou desenhar mapas em softwares externos (como Photoshop) a cada alteração de design.</span>
+                    <span class="lang-en">Eliminates manual block arrangement or external 2D map painting (e.g., Photoshop) upon design changes.</span>
+                </li>
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Zero Impacto de Renderização Dinâmica:</span>
+                        <span class="lang-en">Zero Runtime Render Overhead:</span>
+                    </strong> 
+                    <span class="lang-pt">Ao utilizar fotos estáticas em vez de componentes de captura de cena em tempo real (Scene Capture 2D), a ferramenta economiza passagens pesadas na GPU, mantendo a taxa de quadros (FPS) estável.</span>
+                    <span class="lang-en">By replacing real-time Scene Capture 2D components with static textures, GPU passes are significantly reduced, maintaining stable frame rates.</span>
+                </li>
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Integração Perfeita com Sistemas Procedurais:</span>
+                        <span class="lang-en">Seamless Procedural Integration:</span>
+                    </strong> 
+                    <span class="lang-pt">Conecta o fluxo de criação de conteúdo estático do Editor com a lógica de montagem procedural e replicação multiplayer do jogo em tempo de execução.</span>
+                    <span class="lang-en">Bridges static Editor content authoring directly with runtime procedural assembly and multiplayer replication.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Ações do Rodapé do Projeto -->
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="main.html#projects" class="btn secondary-btn">
+                <span class="lang-pt">&larr; Voltar para a Galeria</span>
+                <span class="lang-en">&larr; Back to Gallery</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <span class="lang-pt">&copy; 2026 Technical Artist. Todos os direitos reservados.</span>
+                <span class="lang-en">&copy; 2026 Technical Artist. All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="main/script.js"></script>
+</body>
+</html>

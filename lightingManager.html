@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lighting Manager | Technical Artist Portfolio</title>
+    <link rel="stylesheet" href="main/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="main.html" class="logo">&lt;<span class="highlight">TechArt</span> /&gt;</a>
+            <nav class="nav-menu">
+                <a href="main.html#projects" class="nav-link">
+                    <span class="lang-pt">&larr; Voltar aos Projetos</span>
+                    <span class="lang-en">&larr; Back to Projects</span>
+                </a>
+                <a href="main.html#contact" class="nav-link btn-contact">
+                    <span class="lang-pt">Contato</span>
+                    <span class="lang-en">Contact</span>
+                </a>
+                <button class="lang-toggle-btn nav-link" onclick="toggleLanguage()" style="background:none; border:1px solid var(--border-color); padding: 4px 10px; border-radius: 4px; cursor: pointer; color: var(--text-heading); font-weight: bold; margin-left: 10px;">EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container project-detail-content" style="padding-top: 120px; padding-bottom: 80px;">
+        <header class="detail-header" style="text-align: center; margin-bottom: 40px;">
+            <span class="card-tag" style="font-family: var(--font-mono); color: var(--accent-purple); font-size: 0.9rem;">
+                <span class="lang-pt">Unreal Engine / Iluminação & Ferramentas</span>
+                <span class="lang-en">Unreal Engine / Lighting & Tooling</span>
+            </span>
+            <h1 class="hero-title" style="font-size: 2.5rem; color: var(--text-heading); margin: 15px 0;">Lighting Manager</h1>
+            <p class="hero-subtitle" style="max-width: 800px; margin: 0 auto; color: #8b949e;">
+                <span class="lang-pt">Sistema centralizado para gerenciamento, zoneamento e transição dinâmica de perfis de iluminação e pós-processamento orientado a DataAssets.</span>
+                <span class="lang-en">Centralized DataAsset-driven system for managing, zoning, and dynamically transitioning lighting profiles and post-processing.</span>
+            </p>
+        </header>
+
+        <!-- Container de Imagem / Mídia do Projeto -->
+        <section class="project-media-container" style="margin: 40px 0; text-align: center; display: flex; justify-content: center;">
+            <img src="imgs/lightingManager.gif" alt="Demonstração do Lighting Manager" class="project-image" style="width: 800px; max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.3); object-fit: cover;">
+        </section>
+
+        <!-- Funcionalidades & Lógica da Arquitetura -->
+        <section class="detail-section" style="background-color: var(--card-bg); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 40px;">
+            <h2 style="color: var(--text-heading); margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                <span class="lang-pt">Como Funciona & Lógica da Arquitetura</span>
+                <span class="lang-en">How It Works & Architectural Logic</span>
+            </h2>
+            
+            <div style="display: grid; gap: 25px;">
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">1. Centralização de Dados (DataAsset de Iluminação)</span>
+                        <span class="lang-en">1. Data Centralization (Lighting DataAsset)</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Todas as propriedades de iluminação e pós-processamento — como parâmetros de Sky Light, iluminação direcional, parâmetros de Post-Process (ex: exposição, color grading, bloom) e efeitos atmosféricos — são encapsuladas em um DataAsset. Isso permite criar e reutilizar diferentes "perfis" de ambiente (ex: biomas, dia/noite, cavernas ou dungeons) de forma organizada e sem dependência de lógica hardcoded.</span>
+                        <span class="lang-en">All lighting and post-processing properties—such as Sky Light settings, directional light, post-process parameters (e.g., exposure, color grading, bloom), and atmospheric effects—are encapsulated in a DataAsset. This allows creating and reusing distinct environment profiles (e.g., biomes, day/night, caves, dungeons) in an organized way without hardcoded logic.</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">2. Ator de Volume / Zoneamento de Ambiente</span>
+                        <span class="lang-en">2. Volume Actors / Environmental Zoning</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Atores colocados no nível (Lighting/Atmosphere Triggers) definem qual perfil de iluminação deve ser aplicado a cada zona do mapa. Ao entrar ou sair de uma determinada área, o sistema lê as informações do DataAsset associado e realiza uma transição suave (blend) dos parâmetros visuais.</span>
+                        <span class="lang-en">Level-placed triggers define which lighting profile applies to each map zone. When entering or leaving an area, the system reads the corresponding DataAsset data and smoothly blends visual parameters.</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">3. Sincronização Multiplayer (Server & Client Consistency)</span>
+                        <span class="lang-en">3. Multiplayer Synchronization (Server & Client Consistency)</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Garante que o estado de iluminação e atmosfera esteja perfeitamente alinhado entre o Servidor e todos os Clientes conectados. Mudanças climáticas, avanços de horário ou transições entre áreas são replicados ou calculados deterministicamente, assegurando uma experiência visual idêntica para todos os jogadores sem divergências de visibilidade.</span>
+                        <span class="lang-en">Ensures lighting and atmosphere states stay fully aligned between Server and connected Clients. Weather changes, time-of-day progression, or area transitions are replicated or calculated deterministically, guaranteeing identical visual experiences without visibility discrepancies.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destaques de Produção & Otimização -->
+        <section class="detail-section" style="background-color: var(--bg-alt); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 40px;">
+            <h2 style="color: var(--text-heading); margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                <span class="lang-pt">Destaques de Produção & Otimização</span>
+                <span class="lang-en">Production & Optimization Highlights</span>
+            </h2>
+            
+            <ul style="list-style-type: none; padding-left: 0; display: grid; gap: 15px;">
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Flexibilidade para Artistas (Artist-Friendly Workflow):</span>
+                        <span class="lang-en">Artist-Friendly Workflow:</span>
+                    </strong> 
+                    <span class="lang-pt">Permite que a equipe de Lighting e Environment Artists ajuste o visual do jogo criando e modificando DataAssets no Editor em tempo real, sem necessidade de reconfigurar volumes ou atores individualmente na cena.</span>
+                    <span class="lang-en">Allows lighting and environment artists to adjust game visuals in real-time by editing DataAssets in the Editor, avoiding individual actor/volume reconfigurations.</span>
+                </li>
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Transições Suaves e Performance:</span>
+                        <span class="lang-en">Smooth Transitions & High Performance:</span>
+                    </strong> 
+                    <span class="lang-pt">Utiliza interpolação dinâmica de parâmetros para evitar trocas bruscas de iluminação, mantendo baixo custo de processamento por aplicar alterações em propriedades já existentes da Engine em vez de re-instanciar componentes pesados.</span>
+                    <span class="lang-en">Employs dynamic parameter interpolation to prevent jarring visual pops while maintaining minimal CPU/GPU overhead by modifying existing Engine properties rather than re-instantiating heavy components.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Ações do Rodapé do Projeto -->
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="main.html#projects" class="btn secondary-btn">
+                <span class="lang-pt">&larr; Voltar para a Galeria</span>
+                <span class="lang-en">&larr; Back to Gallery</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <span class="lang-pt">&copy; 2026 Technical Artist. Todos os direitos reservados.</span>
+                <span class="lang-en">&copy; 2026 Technical Artist. All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="main/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Telemetry & Webhook Automation | Technical Artist Portfolio</title>
+    <link rel="stylesheet" href="main/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="main.html" class="logo">&lt;<span class="highlight">TechArt</span> /&gt;</a>
+            <nav class="nav-menu">
+                <a href="main.html#projects" class="nav-link">
+                    <span class="lang-pt">&larr; Voltar aos Projetos</span>
+                    <span class="lang-en">&larr; Back to Projects</span>
+                </a>
+                <a href="main.html#contact" class="nav-link btn-contact">
+                    <span class="lang-pt">Contato</span>
+                    <span class="lang-en">Contact</span>
+                </a>
+                <button class="lang-toggle-btn nav-link" onclick="toggleLanguage()" style="background:none; border:1px solid var(--border-color); padding: 4px 10px; border-radius: 4px; cursor: pointer; color: var(--text-heading); font-weight: bold; margin-left: 10px;">EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container project-detail-content" style="padding-top: 120px; padding-bottom: 80px;">
+        <header class="detail-header" style="text-align: center; margin-bottom: 40px;">
+            <span class="card-tag" style="font-family: var(--font-mono); color: var(--accent-purple); font-size: 0.9rem;">Unreal Engine & Discord API / Gameplay Telemetry & Automation</span>
+            <h1 class="hero-title" style="font-size: 2.5rem; color: var(--text-heading); margin: 15px 0;">
+                <span class="lang-pt">Ferramenta de Telemetria e Reporte Automático via Webhook</span>
+                <span class="lang-en">Automated Telemetry & Webhook Reporting Tool</span>
+            </h1>
+            <p class="hero-subtitle" style="max-width: 800px; margin: 0 auto; color: #8b949e;">
+                <span class="lang-pt">Sistema integrado de suporte ao desenvolvimento, QA e monitoramento de Gameplay Balance. Transmite instantaneamente dados de partidas, screenshots, logs e métricas de desempenho diretamente para o Discord via Webhooks.</span>
+                <span class="lang-en">Integrated development and QA tool for gameplay telemetry. Sends instant match data, screenshots, raw logs, and performance metrics directly to Discord channels via Webhooks.</span>
+            </p>
+        </header>
+
+        <!-- Container da Mídia do Projeto -->
+        <section class="project-media-container" style="margin: 40px 0; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <div style="position: relative; width: 100%; max-width: 800px; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <iframe 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                    src="https://www.youtube-nocookie.com/embed/ngj-gM-enZ8?autoplay=1&mute=1&controls=0&loop=1&playlist=ngj-gM-enZ8"
+                    title="Demonstração RunReporter" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+            <figcaption style="font-size: 0.88rem; color: #8b949e; background-color: var(--bg-alt); padding: 10px 16px; border-radius: 6px; border: 1px solid var(--border-color); max-width: 800px; text-align: center; line-height: 1.4;">
+                <i data-lucide="info" style="width: 14px; height: 14px; vertical-align: middle; margin-right: 6px; color: var(--accent-blue);"></i>
+                <span class="lang-pt">Fluxo de eventos: transmissão automatizada de logs, relatórios de economia, erros de gameplay e capturas de tela direto para os canais de desenvolvimento no Discord.</span>
+                <span class="lang-en">Event pipeline: automated transmission of logs, economy breakdowns, gameplay bugs, and screenshots directly to Discord dev channels.</span>
+            </figcaption>
+        </section>
+
+        <!-- Funcionalidades & Lógica da Arquitetura -->
+        <section class="detail-section" style="background-color: var(--card-bg); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 40px;">
+            <h2 style="color: var(--text-heading); margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                <span class="lang-pt">Fluxo de Funcionalidades & Lógica da Arquitetura</span>
+                <span class="lang-en">Feature Pipeline & System Architecture</span>
+            </h2>
+            
+            <div style="display: grid; gap: 25px;">
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">1. Disparo In-Game & Reporte Manual de Bugs</span>
+                        <span class="lang-en">1. In-Game Bug Reporting & Manual Triggers</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Quando o jogador ou tester clica no botão "Reportar Bug" na interface do jogo:</span>
+                        <span class="lang-en">When a player or tester clicks "Report Bug" in-game:</span>
+                    </p>
+                    <ul style="list-style-type: disc; padding-left: 20px; margin-top: 8px; color: var(--text-body);">
+                        <li style="margin-bottom: 6px;">
+                            <span class="lang-pt">O sistema congela o quadro para gerar uma captura de tela (screenshot) instantânea no momento exato do problema.</span>
+                            <span class="lang-en">The system freezes the frame to capture an instantaneous screenshot.</span>
+                        </li>
+                        <li style="margin-bottom: 6px;">
+                            <span class="lang-pt">Coleta metadados de contexto em tempo real: coordenadas no mundo ($X, Y, Z$), vida do jogador, estados dos sistemas, Seed do mapa, IAs ativas e versão da build.</span>
+                            <span class="lang-en">Gathers real-time contextual metadata: world coordinates ($X, Y, Z$), player HP, system states, map Seed, active AI entities, and build version.</span>
+                        </li>
+                        <li>
+                            <span class="lang-pt">Constrói uma requisição HTTP POST para o Discord formatando a mensagem com títulos, tags de prioridade, screenshot e o arquivo de log completo da partida (.txt).</span>
+                            <span class="lang-en">Constructs an HTTP POST request to Discord containing rich formatting, priority tags, screenshot, and raw match log files (.txt).</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">2. Automação de Logs Event-Driven (Eventos Automáticos de Gameplay)</span>
+                        <span class="lang-en">2. Event-Driven Automated Logging</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Além do disparo manual, o sistema escuta eventos globais do jogo para enviar relatórios automáticos no Discord sempre que marcos críticos acontecem:</span>
+                        <span class="lang-en">Beyond manual reports, the system listens to global game events to send automated updates on key milestones:</span>
+                    </p>
+                    <ul style="list-style-type: disc; padding-left: 20px; margin-top: 8px; color: var(--text-body);">
+                        <li style="margin-bottom: 6px;">
+                            <strong style="color: var(--text-heading);">
+                                <span class="lang-pt">Crash do Jogo:</span>
+                                <span class="lang-en">Game Crash:</span>
+                            </strong> 
+                            <span class="lang-pt">Emite um alerta emergencial anexando os últimos rastros da memória e logs da sessão para identificação rápida do erro.</span>
+                            <span class="lang-en">Emits an emergency alert attaching stack traces and session logs for rapid triage.</span>
+                        </li>
+                        <li style="margin-bottom: 6px;">
+                            <strong style="color: var(--text-heading);">
+                                <span class="lang-pt">Falha na Run (Morte/Derrota):</span>
+                                <span class="lang-en">Run Failure (Wipe/Defeat):</span>
+                            </strong> 
+                            <span class="lang-pt">Registra o momento em que a equipe é eliminada, informando a causa da derrota, tempo de sobrevivência e local do mapa.</span>
+                            <span class="lang-en">Logs team wipe events, reporting defeat causes, survival times, and locations.</span>
+                        </li>
+                        <li style="margin-bottom: 6px;">
+                            <strong style="color: var(--text-heading);">
+                                <span class="lang-pt">Sucesso na Run (Vitória/Extração):</span>
+                                <span class="lang-en">Run Success (Extraction/Victory):</span>
+                            </strong> 
+                            <span class="lang-pt">Notifica a conclusão bem-sucedida do nível, apresentando os recursos coletados e o status final do time.</span>
+                            <span class="lang-en">Notifies successful level completions with extracted loot breakdowns and squad status.</span>
+                        </li>
+                        <li>
+                            <strong style="color: var(--text-heading);">
+                                <span class="lang-pt">Derrota do Boss:</span>
+                                <span class="lang-en">Boss Defeated:</span>
+                            </strong> 
+                            <span class="lang-pt">Notifica quando o chefe da fase é derrotado na Boss Fight, registrando o tempo de combate, dano infligido e quantidade de tentativas.</span>
+                            <span class="lang-en">Reports boss defeat events along with combat duration, damage dealt, and attempt counts.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">3. Análise de Rentabilidade e Parâmetros de Gameplay</span>
+                        <span class="lang-en">3. Economy & Gameplay Metric Analysis</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">A cada encerramento de partida (seja por vitória, derrota ou crash), a ferramenta calcula e envia métricas econômicas e estatísticas percentuais:</span>
+                        <span class="lang-en">Upon match end (victory, defeat, crash), the system calculates economic percentages and performance metrics:</span>
+                    </p>
+                    <ul style="list-style-type: disc; padding-left: 20px; margin-top: 8px; color: var(--text-body);">
+                        <li style="margin-bottom: 6px;">
+                            <strong style="color: var(--text-heading);">
+                                <span class="lang-pt">Taxa de Retorno & Rentabilidade:</span>
+                                <span class="lang-en">Return Rate & Profitability:</span>
+                            </strong> 
+                            <span class="lang-pt">Avalia o valor dos recursos coletados em relação ao tempo investido e aos custos operacionais da run (suprimentos e itens consumidos).</span>
+                            <span class="lang-en">Evaluates extracted loot value relative to time spent and gear expenditure.</span>
+                        </li>
+                        <li>
+                            <strong style="color: var(--text-heading);">
+                                <span class="lang-pt">Balanço da Economia:</span>
+                                <span class="lang-en">Economy Balance:</span>
+                            </strong> 
+                            <span class="lang-pt">Fornece parâmetros de porcentagem indicando quão rentável está sendo cada estilo de gameplay, auxiliando no ajuste da curva de recompensas do jogo.</span>
+                            <span class="lang-en">Provides percentage metrics showing profitability across playstyles to refine reward curves.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">4. Integração com o RunDebugger (Análise Top-Down)</span>
+                        <span class="lang-en">4. Integration with RunDebugger</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Todos os eventos disparados no Discord (reports manuais ou logs automáticos) acompanham o log bruto da partida:</span>
+                        <span class="lang-en">All Discord notifications include attached raw match log files:</span>
+                    </p>
+                    <ul style="list-style-type: disc; padding-left: 20px; margin-top: 8px; color: var(--text-body);">
+                        <li style="margin-bottom: 6px;">
+                            <span class="lang-pt">Os desenvolvedores baixam o log diretamente da mensagem do Discord e o carregam na ferramenta <strong>RunDebugger</strong>.</span>
+                            <span class="lang-en">Developers can download logs from Discord and load them into the <strong>RunDebugger</strong> tool.</span>
+                        </li>
+                        <li>
+                            <span class="lang-pt">O log permite abrir a visão interativa Top-Down da run, navegar pela linha do tempo e analisar visualmente a posição espacial dos jogadores, rota percorrida e histórico de combates no minimapa.</span>
+                            <span class="lang-en">Logs reconstruct top-down match views, letting devs scrub timelines and analyze player movement or combat events visually.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destaques de Produção & Impacto no Projeto -->
+        <section class="detail-section" style="background-color: var(--bg-alt); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 40px;">
+            <h2 style="color: var(--text-heading); margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                <span class="lang-pt">Destaques de Produção & Impacto no Projeto</span>
+                <span class="lang-en">Production Highlights & Impact</span>
+            </h2>
+            
+            <ul style="list-style-type: none; padding-left: 0; display: grid; gap: 15px;">
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Monitoramento Passivo de Balanceamento:</span>
+                        <span class="lang-en">Passive Balance Monitoring:</span>
+                    </strong> 
+                    <span class="lang-pt">Acompanhamento constante da taxa de sucesso e rentabilidade das partidas sem a necessidade de coletar formulários manualmente.</span>
+                    <span class="lang-en">Continuous tracking of win rates and run profitability without manual QA surveys.</span>
+                </li>
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Triagem de Bugs Rápida e Assertiva:</span>
+                        <span class="lang-en">Fast Bug Triage:</span>
+                    </strong> 
+                    <span class="lang-pt">Elimina relatórios vagos. Crashes e erros chegam no Discord com logs anexados, contexto e imagem do momento do disparo.</span>
+                    <span class="lang-en">Eliminates vague bug reports. Crashes deliver attached logs, contextual parameters, and exact screenshots.</span>
+                </li>
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Auditoria Completa com o RunDebugger:</span>
+                        <span class="lang-en">Full Auditability via RunDebugger:</span>
+                    </strong> 
+                    <span class="lang-pt">Qualquer evento crítico enviado para o Discord pode ser reproduzido espacialmente no minimapa para entender falhas de layout, exploits ou picos desproporcionais de dificuldade.</span>
+                    <span class="lang-en">Critical events posted to Discord can be spatially replayed on minimaps to catch exploits or layout bugs.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Ações do Rodapé do Projeto -->
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="main.html#projects" class="btn secondary-btn">
+                <span class="lang-pt">&larr; Voltar para a Galeria</span>
+                <span class="lang-en">&larr; Back to Gallery</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <span class="lang-pt">&copy; 2026 Technical Artist. Todos os direitos reservados.</span>
+                <span class="lang-en">&copy; 2026 Technical Artist. All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="main/script.js"></script>
+</body>
+</html>

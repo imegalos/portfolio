@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Character Customization | Technical Artist Portfolio</title>
+    <link rel="stylesheet" href="main/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="main.html" class="logo">&lt;<span class="highlight">TechArt</span> /&gt;</a>
+            <nav class="nav-menu">
+                <a href="main.html#projects" class="nav-link">
+                    <span class="lang-pt">&larr; Voltar aos Projetos</span>
+                    <span class="lang-en">&larr; Back to Projects</span>
+                </a>
+                <a href="main.html#contact" class="nav-link btn-contact">
+                    <span class="lang-pt">Contato</span>
+                    <span class="lang-en">Contact</span>
+                </a>
+                <button class="lang-toggle-btn nav-link" onclick="toggleLanguage()" style="background:none; border:1px solid var(--border-color); padding: 4px 10px; border-radius: 4px; cursor: pointer; color: var(--text-heading); font-weight: bold; margin-left: 10px;">EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container project-detail-content" style="padding-top: 120px; padding-bottom: 80px;">
+        <header class="detail-header" style="text-align: center; margin-bottom: 40px;">
+            <span class="card-tag" style="font-family: var(--font-mono); color: var(--accent-purple); font-size: 0.9rem;">Unreal Engine / Character Tech, Data-Driven UI & Shaders</span>
+            <h1 class="hero-title" style="font-size: 2.5rem; color: var(--text-heading); margin: 15px 0;">
+                <span class="lang-pt">Sistema de Customização de Personagens Data-Driven & UI Dinâmica</span>
+                <span class="lang-en">Data-Driven Character Customization & Dynamic UI System</span>
+            </h1>
+            <p class="hero-subtitle" style="max-width: 800px; margin: 0 auto; color: #8b949e;">
+                <span class="lang-pt">Sistema modular de personalização para gerenciamento de variações anatômicas, troca de partes do corpo e alterações de cores via Custom Primitive Data, com UI instanciada dinamicamente a partir de DataAssets.</span>
+                <span class="lang-en">Modular character customization system managing anatomical variations, body part swaps, and color parameters via Custom Primitive Data, featuring DataAsset-driven dynamic UI.</span>
+            </p>
+        </header>
+
+        <!-- Container da Mídia do Projeto -->
+        <section class="project-media-container" style="margin: 40px 0; text-align: center; display: flex; justify-content: center;">
+            <div style="position: relative; width: 100%; max-width: 800px; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <iframe 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                    src="https://www.youtube-nocookie.com/embed/yGBrY00D-zw?autoplay=1&mute=1&controls=0&loop=1&playlist=yGBrY00D-zw"
+                    title="Demonstração Character Customization" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Funcionalidades & Lógica da Arquitetura -->
+        <section class="detail-section" style="background-color: var(--card-bg); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 40px;">
+            <h2 style="color: var(--text-heading); margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                <span class="lang-pt">Como Funciona & Lógica da Arquitetura</span>
+                <span class="lang-en">How It Works & System Architecture</span>
+            </h2>
+            
+            <div style="display: grid; gap: 25px;">
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">1. Centralização Estruturada em DataAsset</span>
+                        <span class="lang-en">1. DataAsset Centralization</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Todas as variações visuais — incluindo as malhas de cada parte do corpo (cabeça, tronco, membros, acessórios) separadas por biotipo — são parametrizadas dentro de um DataAsset. Ele atua como a "fonte única da verdade" (single source of truth) para os dados estéticos dos personagens.</span>
+                        <span class="lang-en">All visual variations—including body parts (head, torso, limbs, accessories) categorized by body types—are defined inside a DataAsset acting as a single source of truth.</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">2. Geração Automática de UI (Dynamic Widget Spawning)</span>
+                        <span class="lang-en">2. Dynamic UI Generation (Widget Spawning)</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">A interface do usuário (UMG) se adapta dinamicamente aos dados. O sistema lê cada array de itens e categorias presente no DataAsset e instancia automaticamente os botões correspondentes na tela. Adicionar ou remover uma opção de customização no DataAsset atualiza a UI instantaneamente sem necessidade de criar botões manualmente no UMG.</span>
+                        <span class="lang-en">The UI (UMG) adapts dynamically to data. The system reads item arrays in the DataAsset and automatically spawns matching UI buttons. Adding options to DataAssets immediately updates menus without editing UMG layouts.</span>
+                    </p>
+                    <section class="project-media-container" style="margin: 40px 0; text-align: center; display: flex; justify-content: center;">
+                        <img src="imgs/charcustomization_dataasset.png" alt="Demonstração do DataAsset" class="project-image" style="width: 600px; max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.3); object-fit: cover;">
+                    </section>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">3. Aplicação Dinâmica por Evento de Clique</span>
+                        <span class="lang-en">3. Dynamic Application via UI Events</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Ao clicar nos botões gerados dinamicamente, a programação acessa o respectivo índice do array no DataAsset e define instantaneamente as novas malhas e parâmetros de cor no ator do personagem.</span>
+                        <span class="lang-en">Clicking dynamically generated UI buttons queries corresponding DataAsset array indices and instantly updates character meshes and parameters.</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">4. Recolorização Otimizada via Custom Primitive Data (CPD)</span>
+                        <span class="lang-en">4. Optimized Recoloring via Custom Primitive Data (CPD)</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Para trocas de cores e recolors, o sistema não cria e nem instancia novos Material Instances na memória (o que geraria draw calls extras e alocação pesada). Em ver disso, envia os dados de cor diretamente para o shader do objeto via Custom Primitive Data, garantindo variações ilimitadas com impacto zero na GPU.</span>
+                        <span class="lang-en">To handle color swaps, the system avoids instantiating new Material Instances (which increase draw calls and memory). Instead, color vectors feed directly to shaders via Custom Primitive Data with zero extra GPU cost.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pontos Fortes & Impacto na Produção -->
+        <section class="detail-section" style="background-color: var(--bg-alt); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 40px;">
+            <h2 style="color: var(--text-heading); margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                <span class="lang-pt">Pontos Fortes & Impacto na Produção (Artist Workflow)</span>
+                <span class="lang-en">Production Impact & Artist Workflow</span>
+            </h2>
+            
+            <ul style="list-style-type: none; padding-left: 0; display: grid; gap: 15px;">
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Interface 100% Automatizada e Escalável:</span>
+                        <span class="lang-en">Fully Automated & Scalable UI:</span>
+                    </strong> 
+                    <span class="lang-pt">Os artistas e designers não precisam abrir o UMG ou alterar a lógica de Blueprints para adicionar novos acessórios, opções ou cores. Basta inserir um novo item no array do DataAsset e o botão aparecerá pronto e funcional no menu de customização.</span>
+                    <span class="lang-en">Artists add items directly to DataAsset arrays without touching UMG graphs; matching menu buttons populate automatically.</span>
+                </li>
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Otimização Extrema de Performance (VRAM & Draw Calls):</span>
+                        <span class="lang-en">Maximum Performance Optimization (VRAM & Draw Calls):</span>
+                    </strong> 
+                    <span class="lang-pt">O uso de Custom Primitive Data para as variações de cores permite que múltiplos personagens com paletas de cores totalmente diferentes compartilhem o exato mesmo material base na GPU, sem aumentar o consumo de memória.</span>
+                    <span class="lang-en">CPD usage allows characters with distinct color palettes to share base material instances, saving VRAM and batching draw calls.</span>
+                </li>
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Iteração Visual Direta na Engine:</span>
+                        <span class="lang-en">Direct In-Engine Iteration:</span>
+                    </strong> 
+                    <span class="lang-pt">Permite testar e visualizar novas combinações e biotipos diretamente em tempo de execução de forma fluida, acelerando o ciclo de feedback entre as equipes de arte e game design.</span>
+                    <span class="lang-en">Enables testing and previewing body types and item combinations dynamically during runtime.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Ações do Rodapé do Projeto -->
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="main.html#projects" class="btn secondary-btn">
+                <span class="lang-pt">&larr; Voltar para a Galeria</span>
+                <span class="lang-en">&larr; Back to Gallery</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <span class="lang-pt">&copy; 2026 Technical Artist. Todos os direitos reservados.</span>
+                <span class="lang-en">&copy; 2026 Technical Artist. All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="main/script.js"></script>
+</body>
+</html>

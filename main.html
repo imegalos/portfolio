@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Technical Artist</title>
+    <link rel="stylesheet" href="main/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">&lt;<span class="highlight">TechArt</span> /&gt;</a>
+            <nav class="nav-menu">
+                <a href="#about" class="nav-link">
+                    <span class="lang-pt">Sobre</span>
+                    <span class="lang-en">About</span>
+                </a>
+                <a href="#projects" class="nav-link">
+                    <span class="lang-pt">Projetos</span>
+                    <span class="lang-en">Projects</span>
+                </a>
+                <a href="#skills" class="nav-link">
+                    <span class="lang-pt">Habilidades</span>
+                    <span class="lang-en">Skills</span>
+                </a>
+                <a href="#contact" class="nav-link btn-contact">
+                    <span class="lang-pt">Contato</span>
+                    <span class="lang-en">Contact</span>
+                </a>
+                <button class="lang-toggle-btn nav-link" onclick="toggleLanguage()" style="background:none; border:1px solid var(--border-color); padding: 4px 10px; border-radius: 4px; cursor: pointer; color: var(--text-heading); font-weight: bold; margin-left: 10px;">EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">
+                <span class="lang-pt">Ponte entre <span class="gradient-text">Arte</span> & <span class="gradient-text">Programação</span></span>
+                <span class="lang-en">Bridge between <span class="gradient-text">Art</span> & <span class="gradient-text">Programming</span></span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="lang-pt">Technical Artist especializado em Ferramentas, Programação Gameplay/Systems e Shader Materials.</span>
+                <span class="lang-en">Technical Artist specialized in Tooling, Gameplay/Systems Programming, and Shader Materials.</span>
+            </p>
+            <div class="hero-actions">
+                <a href="#about" class="btn primary-btn">
+                    <span class="lang-pt">Quem é Israel</span>
+                    <span class="lang-en">Who is Israel</span>
+                </a>
+                <a href="#projects" class="btn primary-btn">
+                    <span class="lang-pt">Ver Projetos</span>
+                    <span class="lang-en">View Projects</span>
+                </a>
+                <a href="#contact" class="btn secondary-btn">
+                    <span class="lang-pt">Contato</span>
+                    <span class="lang-en">Contact</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+   <!-- About Me Section -->
+    <section id="about" class="section bg-alt">
+    <div class="container">
+        <div class="about-grid">
+        
+        <!-- Card com Foto -->
+        <div class="about-image-wrapper">
+            <div class="about-image-card">
+            <img src="imgs/me_israelmegalos.jpg" alt="Israel Henrique - Senior Technical Artist" class="profile-image">
+            <div class="tech-overlay"></div>
+            </div>
+        </div>
+
+        <!-- Biografia e Informações -->
+        <div class="about-content">
+            <!-- Tag Superior -->
+            <span class="section-tag">
+                <span class="lang-pt">/ SOBRE MIM</span>
+                <span class="lang-en">/ ABOUT ME</span>
+            </span>
+
+            <!-- Título Principal -->
+            <h2 class="about-title">
+                <span class="lang-pt">Unindo Arte e Engenharia</span>
+                <span class="lang-en">Bridging Art & Engineering</span>
+            </h2>
+
+            <!-- Parágrafo Lead -->
+            <p class="about-lead">
+                <span class="lang-pt">Sou <strong>Senior Technical Artist</strong> com mais de 8 anos de experiência em criação de pipelines escaláveis, otimização de shaders complexos e desenvolvimento de ferramentas internas na <strong>Unreal Engine</strong>. Atualmente atuo na <strong>Globant</strong>.</span>
+                <span class="lang-en">I am a <strong>Senior Technical Artist</strong> with over 8 years of experience building scalable pipelines, optimizing complex shaders, and developing internal tools in <strong>Unreal Engine</strong>. Currently working at <strong>Globant</strong>.</span>
+            </p>
+
+            <!-- Parágrafo 1 -->
+            <p class="about-text">
+                <span class="lang-pt">Minha jornada começou em 2017 no cenário indie[cite: 12], dominando a Unreal Engine desde a versão 4.17 até a UE 5.5[cite: 12]. O que começou como curiosidade técnica em renderização em tempo real evoluiu para uma carreira focada em um objetivo claro: <strong>desenvolver jogos reconhecidos mundialmente pela excelência artística, narrativa e técnica</strong>[cite: 12].</span>
+                <span class="lang-en">My journey started in 2017 within the indie game scene[cite: 12], mastering Unreal Engine from version 4.17 all the way to UE 5.5[cite: 12]. What began as a technical passion for real-time rendering evolved into a career driven by a single goal: <strong>creating games recognized worldwide for their artistic, narrative, and technical excellence</strong>[cite: 12].</span>
+            </p>
+
+            <!-- Parágrafo 2 -->
+            <p class="about-text">
+                <span class="lang-pt">Especializei-me em resolver gargalos de alta complexidade — desde shaders de alta performance e VFX em Niagara até automação de fluxos em C++ e Python[cite: 12]. Tenho foco em estruturar bases sólidas e otimizadas desde o início da produção para garantir a longevidade e estabilidade do projeto.</span>
+                <span class="lang-en">I thrive on solving high-impact technical bottlenecks—from high-performance shader creation and Niagara VFX to C++/Python workflow automation[cite: 12]. I specialize in laying solid, optimized foundations early in production to ensure long-term stability for large-scale projects.</span>
+            </p>
+
+            <!-- Contador / Métricas -->
+            <div class="about-stats">
+                <div class="stat-item">
+                    <span class="stat-number">8+</span>
+                    <span class="stat-label">
+                        <span class="lang-pt">Anos Exp.</span>
+                        <span class="lang-en">Years Exp.</span>
+                    </span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">UE 5.5</span>
+                    <span class="stat-label">
+                        <span class="lang-pt">Engine Core</span>
+                        <span class="lang-en">Engine Core</span>
+                    </span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">AA / AAA</span>
+                    <span class="stat-label">
+                        <span class="lang-pt">Foco Pipeline</span>
+                        <span class="lang-en">Pipeline Focus</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Badges de Tech Stack -->
+            <div class="about-tags">
+                <span class="tech-tag">Unreal Engine</span>
+                <span class="tech-tag">C++ & Blueprints</span>
+                <span class="tech-tag">HLSL / Shaders</span>
+                <span class="tech-tag">Python Automation</span>
+                <span class="tech-tag">Optimization & VFX</span>
+            </div>
+        </div>
+
+        </div>
+    </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section bg-alt">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-pt">Habilidades</span>
+                <span class="lang-en">Skills</span>
+            </h2>
+
+            <div class="skills-grid">
+
+                <!-- Automação & Pipeline -->
+                <article class="skill-category">
+                    <h3>
+                        <i data-lucide="terminal"></i>
+                        <span class="lang-pt">Automação e Pipeline</span>
+                        <span class="lang-en">Automation & Pipeline</span>
+                    </h3>
+                    <ul>
+                        <li>
+                            <span class="lang-pt">Desenvolvimento de ferramentas para editor (Slate/Python/C++) focadas em automação de HLODs, geração de minimapas e distribuição de assets.</span>
+                            <span class="lang-en">Editor tool development (Slate/Python/C++) focusing on HLOD automation, minimap generation, and asset spawning.</span>
+                        </li>
+                        <li>
+                            <span class="lang-pt">Criação de utilitários de suporte e diagnóstico, como editores de localização (.po) e leitores de logs para debug de runtime (RunDebugger).</span>
+                            <span class="lang-en">Support and diagnostic utilities creation, such as localization editors (.po) and runtime log parsers (RunDebugger).</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Shaders & Materiais -->
+                <article class="skill-category">
+                    <h3>
+                        <i data-lucide="palette"></i>
+                        <span class="lang-pt">Shaders e Materiais</span>
+                        <span class="lang-en">Shaders & Materials</span>
+                    </h3>
+                    <ul>
+                        <li>
+                            <span class="lang-pt">Criação e otimização de shaders estilizados, simulação de água/oceanos, materiais de pós-processamento e efeitos de tela (HLSL / MaterialX).</span>
+                            <span class="lang-en">Creation and optimization of stylized shaders, water/ocean simulations, post-process materials, and screen effects (HLSL / MaterialX).</span>
+                        </li>
+                        <li>
+                            <span class="lang-pt">Otimização de instruções de shaders e gerenciamento de draw calls para manter a taxa de quadros e orçamento de memória.</span>
+                            <span class="lang-en">Shader instruction optimization and draw call management to preserve framerate and memory budget.</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- Sistemas Gameplay & Programação -->
+                <article class="skill-category">
+                    <h3>
+                        <i data-lucide="code-2"></i>
+                        <span class="lang-pt">Gameplay e Programação</span>
+                        <span class="lang-en">Gameplay & Systems</span>
+                    </h3>
+                    <ul>
+                        <li>
+                            <span class="lang-pt">Implementação de geradores procedurais de mapas (dungeons), sistemas de customização de personagens (malhas/materiais) e lógicas de IA/combate (C++ / Blueprints).</span>
+                            <span class="lang-en">Implementation of procedural map generators (dungeons), character customization systems (meshes/materials), and AI/combat logic (C++ / Blueprints).</span>
+                        </li>
+                        <li>
+                            <span class="lang-pt">Integração de middlewares de áudio e voz (FMOD, VOIP, LipSync) e criação de webhooks para envio de eventos de jogo (Discord).</span>
+                            <span class="lang-en">Integration of audio/voice middleware (FMOD, VOIP, LipSync) and custom webhooks for game event reporting (Discord).</span>
+                        </li>
+                    </ul>
+                </article>
+
+                <!-- VFX & Otimização -->
+                <article class="skill-category">
+                    <h3>
+                        <i data-lucide="gauge"></i>
+                        <span class="lang-pt">VFX e Otimização</span>
+                        <span class="lang-en">VFX & Performance</span>
+                    </h3>
+                    <ul>
+                        <li>
+                            <span class="lang-pt">Criação de sistemas de partículas em Niagara.</span>
+                            <span class="lang-en">Particle system creation using Niagara VFX.</span>
+                        </li>
+                        <li>
+                            <span class="lang-pt">Profiling de performance, otimização de malhas e configuração de HLODs/LODs para projetos de médio e grande porte.</span>
+                            <span class="lang-en">Performance profiling, mesh optimization, and HLOD/LOD setup for mid-to-large-scale projects.</span>
+                        </li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-pt">Projetos & Portfólio</span>
+                <span class="lang-en">Projects & Portfolio</span>
+            </h2>
+            
+            <!-- Filters -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    <span class="lang-pt">Todos</span>
+                    <span class="lang-en">All</span>
+                </button>
+                <button class="filter-btn" data-filter="ferramentas">
+                    <span class="lang-pt">Ferramentas</span>
+                    <span class="lang-en">Tools</span>
+                </button>
+                <button class="filter-btn" data-filter="programacao">
+                    <span class="lang-pt">Programação</span>
+                    <span class="lang-en">Programming</span>
+                </button>
+                <button class="filter-btn" data-filter="materials">
+                    <span class="lang-pt">Materials</span>
+                    <span class="lang-en">Materials</span>
+                </button>
+            </div>
+
+            <!-- Grid de Projetos -->
+            <div class="projects-grid">
+
+                <!-- FERRAMENTAS -->
+                <article class="project-card" data-category="ferramentas">
+                    <div class="card-media">
+                        <div class="placeholder-media"><i data-lucide="wrench"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">
+                            <span class="lang-pt">Ferramenta</span>
+                            <span class="lang-en">Tool</span>
+                        </span>
+                        <h3>HLOD Auto Baker</h3>
+                        <p>
+                            <span class="lang-pt">Automação e otimização para geração de Hierarchical Level of Detail.</span>
+                            <span class="lang-en">Automation and optimization for Hierarchical Level of Detail generation.</span>
+                        </p>
+                        <a href="hlodautobaker.html" class="card-link">
+                            <span class="lang-pt">Ver Detalhes <i data-lucide="arrow-right"></i></span>
+                            <span class="lang-en">View Details <i data-lucide="arrow-right"></i></span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="ferramentas">
+                    <div class="card-media">
+                        <div class="placeholder-media"><i data-lucide="map"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">
+                            <span class="lang-pt">Ferramenta</span>
+                            <span class="lang-en">Tool</span>
+                        </span>
+                        <h3>MiniMap Generator</h3>
+                        <p>
+                            <span class="lang-pt">Gerador e atualizador em tempo real de minimapas para cenários complexos.</span>
+                            <span class="lang-en">Real-time minimap generator and updater for complex environments.</span>
+                        </p>
+                        <a href="minimapGenerator.html" class="card-link">
+                            <span class="lang-pt">Ver Detalhes <i data-lucide="arrow-right"></i></span>
+                            <span class="lang-en">View Details <i data-lucide="arrow-right"></i></span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="ferramentas">
+                    <div class="card-media">
+                        <div class="placeholder-media"><i data-lucide="sun"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">
+                            <span class="lang-pt">Ferramenta</span>
+                            <span class="lang-en">Tool</span>
+                        </span>
+                        <h3>Lighting Manager</h3>
+                        <p>
+                            <span class="lang-pt">Gerenciador centralizado para ajuste rápido de iluminação e profiles no level.</span>
+                            <span class="lang-en">Centralized manager for quick lighting and profile adjustments in-level.</span>
+                        </p>
+                        <a href="lightingManager.html" class="card-link">
+                            <span class="lang-pt">Ver Detalhes <i data-lucide="arrow-right"></i></span>
+                            <span class="lang-en">View Details <i data-lucide="arrow-right"></i></span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="ferramentas">
+                    <div class="card-media">
+                        <div class="placeholder-media"><i data-lucide="boxes"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">
+                            <span class="lang-pt">Ferramenta</span>
+                            <span class="lang-en">Tool</span>
+                        </span>
+                        <h3>Modules Creator</h3>
+                        <p>
+                            <span class="lang-pt">Ferramenta para criação e montagem modular acelerada de assets.</span>
+                            <span class="lang-en">Tool for accelerated modular asset creation and assembly.</span>
+                        </p>
+                        <a href="modulesCreator.html" class="card-link">
+                            <span class="lang-pt">Ver Detalhes <i data-lucide="arrow-right"></i></span>
+                            <span class="lang-en">View Details <i data-lucide="arrow-right"></i></span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="ferramentas">
+                    <div class="card-media">
+                        <div class="placeholder-media"><i data-lucide="sprout"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">
+                            <span class="lang-pt">Ferramenta</span>
+                            <span class="lang-en">Tool</span>
+                        </span>
+                        <h3>Environment Item Spawner</h3>
+                        <p>
+                            <span class="lang-pt">Sistema de distribuição e spawn procedural de vegetação e props no ambiente.</span>
+                            <span class="lang-en">Procedural vegetation and prop distribution and spawning system.</span>
+                        </p>
+                        <a href="furnitureAutoSpawner.html" class="card-link">
+                            <span class="lang-pt">Ver Detalhes <i data-lucide="arrow-right"></i></span>
+                            <span class="lang-en">View Details <i data-lucide="arrow-right"></i></span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- PROGRAMAÇÃO -->
+                <article class="project-card" data-category="programacao">
+                    <div class="card-media">
+                        <div class="placeholder-media"><i data-lucide="cpu"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">
+                            <span class="lang-pt">Programação</span>
+                            <span class="lang-en">Programming</span>
+                        </span>
+                        <h3>Procedural Dungeon Creator</h3>
+                        <p>
+                            <span class="lang-pt">Algoritmo para geração procedural e aleatória de masmorras com salas conectadas.</span>
+                            <span class="lang-en">Algorithm for procedural and randomized dungeon generation with connected rooms.</span>
+                        </p>
+                        <a href="dungeongenerator.html" class="card-link">
+                            <span class="lang-pt">Ver Detalhes <i data-lucide="arrow-right"></i></span>
+                            <span class="lang-en">View Details <i data-lucide="arrow-right"></i></span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="programacao">
+                    <div class="card-media">
+                        <div class="placeholder-media"><i data-lucide="user-cog"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">
+                            <span class="lang-pt">Programação</span>
+                            <span class="lang-en">Programming</span>
+                        </span>
+                        <h3>Characters Customization</h3>
+                        <p>
+                            <span class="lang-pt">Sistema modular de personalização de malhas, acessórios e materiais de personagens.</span>
+                            <span class="lang-en">Modular character customization system for meshes, accessories, and materials.</span>
+                        </p>
+                        <a href="charCustomization.html" class="card-link">
+                            <span class="lang-pt">Ver Detalhes <i data-lucide="arrow-right"></i></span>
+                            <span class="lang-en">View Details <i data-lucide="arrow-right"></i></span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="programacao">
+                    <div class="card-media">
+                        <div class="placeholder-media"><i data-lucide="shield-alert"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">
+                            <span class="lang-pt">Programação</span>
+                            <span class="lang-en">Programming</span>
+                        </span>
+                        <h3>RunReporter</h3>
+                        <p>
+                            <span class="lang-pt">O jogo automaticamente reporta eventos desejados para o Discord.</span>
+                            <span class="lang-en">The game automatically reports targeted events to Discord.</span>
+                        </p>
+                        <a href="runReporter.html" class="card-link">
+                            <span class="lang-pt">Ver Detalhes <i data-lucide="arrow-right"></i></span>
+                            <span class="lang-en">View Details <i data-lucide="arrow-right"></i></span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="programacao">
+                    <div class="card-media">
+                        <div class="placeholder-media"><i data-lucide="bug"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">
+                            <span class="lang-pt">Programação</span>
+                            <span class="lang-en">Programming</span>
+                        </span>
+                        <h3>RunDebugger</h3>
+                        <p>
+                            <span class="lang-pt">Utilitário para análise, profiling de performance e depuração visual durante o jogo.</span>
+                            <span class="lang-en">Utility for analysis, performance profiling, and visual debugging during gameplay.</span>
+                        </p>
+                        <a href="rundebugger.html" class="card-link">
+                            <span class="lang-pt">Ver Detalhes <i data-lucide="arrow-right"></i></span>
+                            <span class="lang-en">View Details <i data-lucide="arrow-right"></i></span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="programacao">
+                    <div class="card-media">
+                        <div class="placeholder-media"><i data-lucide="swords"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">
+                            <span class="lang-pt">Programação</span>
+                            <span class="lang-en">Programming</span>
+                        </span>
+                        <h3>Boss Fight</h3>
+                        <p>
+                            <span class="lang-pt">Lógica de inteligência artificial, fases de combate e padrões de ataque para chefes.</span>
+                            <span class="lang-en">AI logic, combat phases, and boss attack patterns.</span>
+                        </p>
+                        <a href="#" class="card-link">
+                            <span class="lang-pt">Ver Detalhes <i data-lucide="arrow-right"></i></span>
+                            <span class="lang-en">View Details <i data-lucide="arrow-right"></i></span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="programacao">
+                    <div class="card-media">
+                        <div class="placeholder-media"><i data-lucide="bot"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">
+                            <span class="lang-pt">Programação</span>
+                            <span class="lang-en">Programming</span>
+                        </span>
+                        <h3>AI Optimization</h3>
+                        <p>
+                            <span class="lang-pt">Otimização de sistemas de inteligência artificial para lidar com grande número de agentes.</span>
+                            <span class="lang-en">Optimization of AI systems to handle large agent counts.</span>
+                        </p>
+                        <a href="#" class="card-link">
+                            <span class="lang-pt">Ver Detalhes <i data-lucide="arrow-right"></i></span>
+                            <span class="lang-en">View Details <i data-lucide="arrow-right"></i></span>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- MATERIALS -->
+                <article class="project-card" data-category="materials">
+                    <div class="card-media">
+                        <div class="placeholder-media"><i data-lucide="monitor-dot"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">Materials</span>
+                        <h3>Screen Effects</h3>
+                        <p>
+                            <span class="lang-pt">Efeitos de pós-processamento, distorções de câmera e overlays visuais em tempo real.</span>
+                            <span class="lang-en">Post-processing effects, camera distortions, and real-time visual overlays.</span>
+                        </p>
+                        <a href="#" class="card-link">
+                            <span class="lang-pt">Ver Detalhes <i data-lucide="arrow-right"></i></span>
+                            <span class="lang-en">View Details <i data-lucide="arrow-right"></i></span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="materials">
+                    <div class="card-media">
+                        <div class="placeholder-media"><i data-lucide="sparkles"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">Materials</span>
+                        <h3>Frog Shaders</h3>
+                        <p>
+                            <span class="lang-pt">Shaders estilizados e reativos voltados para renderização de personagens e superfícies orgânicas.</span>
+                            <span class="lang-en">Stylized and reactive shaders tailored for character rendering and organic surfaces.</span>
+                        </p>
+                        <a href="#" class="card-link">
+                            <span class="lang-pt">Ver Detalhes <i data-lucide="arrow-right"></i></span>
+                            <span class="lang-en">View Details <i data-lucide="arrow-right"></i></span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-category="materials">
+                    <div class="card-media">
+                        <div class="placeholder-media"><i data-lucide="gem"></i></div>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag">Materials</span>
+                        <h3>Ancient Gem</h3>
+                        <p>
+                            <span class="lang-pt">Material complexo com refração, dispersão interna, brilho e emissivo personalizado.</span>
+                            <span class="lang-en">Complex material featuring refraction, internal dispersion, glow, and custom emissive logic.</span>
+                        </p>
+                        <a href="#" class="card-link">
+                            <span class="lang-pt">Ver Detalhes <i data-lucide="arrow-right"></i></span>
+                            <span class="lang-en">View Details <i data-lucide="arrow-right"></i></span>
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-alt">
+        <div class="container contact-container">
+            <h2 class="section-title">
+                <span class="lang-pt">Entre em Contato</span>
+                <span class="lang-en">Get in Touch</span>
+            </h2>
+            <p>
+                <span class="lang-pt">Aberto para oportunidades em Technical Art, Ferramentas e Shaders.</span>
+                <span class="lang-en">Open for opportunities in Technical Art, Tooling, and Shaders.</span>
+            </p>
+            <div class="contact-links">
+                <a href="mailto:contato.megalos@gmail.com" class="contact-btn"><i data-lucide="mail"></i> Email</a>
+                <a href="https://www.linkedin.com/in/raaelm/" target="_blank" class="contact-btn"><i data-lucide="linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <span class="lang-pt">&copy; 2026 Technical Artist. Todos os direitos reservados.</span>
+                <span class="lang-en">&copy; 2026 Technical Artist. All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="main/script.js"></script>
+</body>
+</html>

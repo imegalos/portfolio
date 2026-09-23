@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Furniture Presets & Item Spawner | Technical Artist Portfolio</title>
+    <link rel="stylesheet" href="main/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="main.html" class="logo">&lt;<span class="highlight">TechArt</span> /&gt;</a>
+            <nav class="nav-menu">
+                <a href="main.html#projects" class="nav-link">
+                    <span class="lang-pt">&larr; Voltar aos Projetos</span>
+                    <span class="lang-en">&larr; Back to Projects</span>
+                </a>
+                <a href="main.html#contact" class="nav-link btn-contact">
+                    <span class="lang-pt">Contato</span>
+                    <span class="lang-en">Contact</span>
+                </a>
+                <button class="lang-toggle-btn nav-link" onclick="toggleLanguage()" style="background:none; border:1px solid var(--border-color); padding: 4px 10px; border-radius: 4px; cursor: pointer; color: var(--text-heading); font-weight: bold; margin-left: 10px;">EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container project-detail-content" style="padding-top: 120px; padding-bottom: 80px;">
+        <header class="detail-header" style="text-align: center; margin-bottom: 40px;">
+            <span class="card-tag" style="font-family: var(--font-mono); color: var(--accent-purple); font-size: 0.9rem;">Unreal Engine / Tooling, EUW & Level Design Automation</span>
+            <h1 class="hero-title" style="font-size: 2.5rem; color: var(--text-heading); margin: 15px 0;">
+                <span class="lang-pt">Sistema de Presets de Spawn de Itens & Otimização de Layout</span>
+                <span class="lang-en">Item Spawn Presets & Layout Optimization System</span>
+            </h1>
+            <p class="hero-subtitle" style="max-width: 800px; margin: 0 auto; color: #8b949e;">
+                <span class="lang-pt">Ferramenta de automação no Editor projetada para vincular posições relativas de surgimento de itens (spawn points) diretamente a Static Meshes específicas, eliminando o posicionamento manual e prevenindo erros no cenário.</span>
+                <span class="lang-en">In-Editor automation tool designed to link relative item spawn points directly to specific Static Meshes, eliminating manual actor placement and preventing clipping/floating errors.</span>
+            </p>
+        </header>
+
+        <!-- Container da Mídia do Projeto -->
+        <section class="project-media-container" style="margin: 40px 0; text-align: center; display: flex; justify-content: center;">
+            <div style="position: relative; width: 100%; max-width: 800px; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+                <iframe 
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                    src="https://www.youtube-nocookie.com/embed/O_NqQSCvrDQ?autoplay=1&mute=1&controls=0&loop=1&playlist=O_NqQSCvrDQ"
+                    title="Demonstração Furniture Auto Spawner" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Funcionalidades & Lógica da Arquitetura -->
+        <section class="detail-section" style="background-color: var(--card-bg); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 40px;">
+            <h2 style="color: var(--text-heading); margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                <span class="lang-pt">Como Funciona & Lógica da Arquitetura</span>
+                <span class="lang-en">How It Works & System Logic</span>
+            </h2>
+            
+            <div style="display: grid; gap: 25px;">
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">1. Autoramento e Registro de Presets (EUW_EnvItemSpawner)</span>
+                        <span class="lang-en">1. Preset Authoring & Registration (EUW_EnvItemSpawner)</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Através de um Editor Utility Widget, o artista seleciona uma Static Mesh base e posiciona os atores de marcação (BP_ItemSpawner) nos locais exatos onde itens podem surgir. Ao salvar o preset, o sistema registra as transformações locais (relative transforms) e a associação da malha na memória e estrutura de dados da ferramenta.</span>
+                        <span class="lang-en">Using an Editor Utility Widget, artists select a base Static Mesh and align spawner nodes (BP_ItemSpawner). Saving stores relative transform offsets tied to the mesh definition.</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">2. Aplicação "Instantânea" com Um Clique</span>
+                        <span class="lang-en">2. One-Click Instant Preset Binding</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Para equipar qualquer mobília nova no cenário, o artista precisa apenas selecionar a mesh desejada no Content Browser e clicar em "SPAWN ITEMS". A ferramenta reconhece o preset associado e injeta automaticamente todos os pontos de spawn nas posições pré-calculadas corretas em relação ao objeto.</span>
+                        <span class="lang-en">To equip furniture props in a level, artists select target meshes and click "SPAWN ITEMS". The tool identifies matching presets and automatically attaches pre-calculated spawn offsets.</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">3. Controle de Probabilidade e Tipagem de Loot</span>
+                        <span class="lang-en">3. Probability & Loot Type Controls</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">O sistema permite configurar globalmente ou individualmente o tipo de item que pode surgir em cada spawner (ex: moedas, armadilhas, munição, consumíveis) e ajustar taxas percentuais de chance de surgimento (spawn chance), integrando a estética do cenário à economia e balanceamento do jogo.</span>
+                        <span class="lang-en">Allows global or per-node configuration for allowed item classes (e.g., coins, traps, ammo) and percentage spawn rates, connecting environment art directly to gameplay balancing.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destaques de Produção & Prevenção de Erros -->
+        <section class="detail-section" style="background-color: var(--bg-alt); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 40px;">
+            <h2 style="color: var(--text-heading); margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                <span class="lang-pt">Destaques de Produção & Prevenção de Erros</span>
+                <span class="lang-en">Production Highlights & QA Benefits</span>
+            </h2>
+            
+            <ul style="list-style-type: none; padding-left: 0; display: grid; gap: 15px;">
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Pipeline À Prova de Erros (Foolproof Design):</span>
+                        <span class="lang-en">Foolproof Design Pipeline:</span>
+                    </strong> 
+                    <span class="lang-pt">Impede que artistas coloquem objetos ou pontos de loot flutuando, enterrados na geometria ou em locais inacessíveis para o jogador, mantendo o padrão de qualidade consistente em todo o projeto.</span>
+                    <span class="lang-en">Prevents floating or clipped loot spawners across levels, preserving quality standards project-wide.</span>
+                </li>
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Economia Massiva de Tempo de Level Design:</span>
+                        <span class="lang-en">Massive Level Design Time Savings:</span>
+                    </strong> 
+                    <span class="lang-pt">Reduz um processo que levaria minutos de ajuste manual por móvel para um único clique, permitindo a montagem e o preenchimento de salas inteiras em questão de segundos.</span>
+                    <span class="lang-en">Reduces minutes of manual micro-adjustments per prop to a single click, populating room layouts in seconds.</span>
+                </li>
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Desvinculação de Lógica e Arte:</span>
+                        <span class="lang-en">Decoupled Art & Gameplay Logic:</span>
+                    </strong> 
+                    <span class="lang-pt">Permite que os Level Artists foquem na composição visual enquanto a ferramenta garante que as regras e posições de gameplay sejam aplicadas rigorosamente segundo as diretrizes de game design.</span>
+                    <span class="lang-en">Frees level artists to focus on composition while the tool ensures gameplay rules apply accurately.</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Ações do Rodapé do Projeto -->
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="main.html#projects" class="btn secondary-btn">
+                <span class="lang-pt">&larr; Voltar para a Galeria</span>
+                <span class="lang-en">&larr; Back to Gallery</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <span class="lang-pt">&copy; 2026 Technical Artist. Todos os direitos reservados.</span>
+                <span class="lang-en">&copy; 2026 Technical Artist. All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="main/script.js"></script>
+</body>
+</html>

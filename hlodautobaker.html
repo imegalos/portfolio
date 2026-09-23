@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HLOD Auto Baker | Technical Art Breakdown</title>
+    <link rel="stylesheet" href="main/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="main.html" class="logo">&lt;<span class="highlight">TechArt</span> /&gt;</a>
+            <nav class="nav-menu">
+                <a href="main.html#projects" class="nav-link">
+                    <span class="lang-pt">&larr; Voltar aos Projetos</span>
+                    <span class="lang-en">&larr; Back to Projects</span>
+                </a>
+                <a href="#contact" class="nav-link btn-contact">
+                    <span class="lang-pt">Contato</span>
+                    <span class="lang-en">Contact</span>
+                </a>
+                <button class="lang-toggle-btn nav-link" onclick="toggleLanguage()" style="background:none; border:1px solid var(--border-color); padding: 4px 10px; border-radius: 4px; cursor: pointer; color: var(--text-heading); font-weight: bold; margin-left: 10px;">EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Project Header Section -->
+    <section class="hero" style="padding-bottom: 40px;">
+        <div class="container hero-content">
+            <span class="card-tag" style="font-size: 1rem; margin-bottom: 12px;">Unreal Engine C++ / Editor Utility</span>
+            <h1 class="hero-title">HLOD Auto Baker</h1>
+            <p class="hero-subtitle">
+                <span class="lang-pt">Sistema de Automação de HLOD em Lote para otimização massiva de cenários e ambientes.</span>
+                <span class="lang-en">Batch HLOD Automation System for massive scenario and environment optimization.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Breakdown Content -->
+    <section class="section bg-alt">
+        <div class="container" style="max-width: 900px;">
+            
+            <!-- Visão Geral -->
+            <div class="skill-category" style="margin-bottom: 30px;">
+                <h3><i data-lucide="wrench"></i> 
+                    <span class="lang-pt">Visão Geral da Ferramenta</span>
+                    <span class="lang-en">Tool Overview</span>
+                </h3>
+                <img src="imgs/hlodautobaker.png" class="detail-image">
+                <p style="margin-top: 10px;">
+                    <span class="lang-pt">
+                        Ferramenta de automação desenvolvida em C++ para Unreal Engine para automatizar a geração de HLODs (Hierarchical Level of Detail) em múltiplos níveis/mapas sequencialmente, eliminando processos manuais repetitivos e reduzindo drasticamente o tempo de otimização de ambientes.
+                        O fato de poder trabalhar utilizando DataAssets ajuda muito a manipulação de quais mapas queremos trabalhar; por exemplo, em larga escala podemos colocar o HLODAutoBaker para automaticamente processar alguns mapas, que podem ser facilmente modificados com um commit no Perforce.
+                    </span>
+                    <span class="lang-en">
+                        Automation tool developed in C++ for Unreal Engine to automate Hierarchical Level of Detail (HLOD) generation across multiple levels/maps sequentially, eliminating repetitive manual processes and drastically reducing environment optimization time.
+                        Leveraging DataAssets greatly simplifies map queue management; for instance, at large scale we can configure HLODAutoBaker to automatically process designated maps, which can be easily updated via a single Perforce commit.
+                    </span>
+                </p>
+            </div>
+
+            <!-- Como Funciona & Lógica do Sistema -->
+            <div class="skill-category" style="margin-bottom: 30px;">
+                <h3><i data-lucide="cpu"></i> 
+                    <span class="lang-pt">Como Funciona & Lógica do Sistema</span>
+                    <span class="lang-en">How It Works & System Logic</span>
+                </h3>
+                <ul style="margin-top: 15px;">
+                    <li style="margin-bottom: 20px;">
+                        <strong style="color: var(--text-heading);">
+                            <span class="lang-pt">Integração com Controle de Versão (Source Control):</span>
+                            <span class="lang-en">Source Control Integration:</span>
+                        </strong>
+                        <p style="margin-top: 5px; color: #8b949e;">
+                            <span class="lang-pt">Antes de iniciar o processamento, o sistema faz o checkout automático no controle de versão de todos os mapas da fila, evitando falhas de permissão ou salvamento durante o processo.</span>
+                            <span class="lang-en">Before processing, the system automatically checks out all queued maps from source control, preventing permission or saving errors during execution.</span>
+                        </p>
+                    </li>
+                    <li style="margin-bottom: 20px;">
+                        <strong style="color: var(--text-heading);">
+                            <span class="lang-pt">Gerenciamento de Fila e Transição de Mapas:</span>
+                            <span class="lang-en">Queue Management & Map Transitions:</span>
+                        </strong>
+                        <p style="margin-top: 5px; color: #8b949e;">
+                            <span class="lang-pt">O código processa os níveis de forma assíncrona. Ele carrega um mapa da fila, aguarda a inicialização completa da Engine via timers do Editor, aplica a configuração global de HLOD no nível e inicia a compilação.</span>
+                            <span class="lang-en">The system processes levels asynchronously. It loads a map from the queue, waits for complete Engine initialization using Editor timers, applies global HLOD configurations, and triggers compilation.</span>
+                        </p>
+                    </li>
+                    <li style="margin-bottom: 20px;">
+                        <strong style="color: var(--text-heading);">
+                            <span class="lang-pt">Geração, Salvamento e Gestão de Memória:</span>
+                            <span class="lang-en">Generation, Saving & Memory Management:</span>
+                        </strong>
+                        <p style="margin-top: 5px; color: #8b949e;">
+                            <span class="lang-pt">Após compilar os HLODs de cada mapa, a ferramenta marca as alterações, salva os novos assets criados e força a limpeza de memória (Garbage Collection) para evitar travamentos ou consumo excessivo de RAM ao processar projetos grandes.</span>
+                            <span class="lang-en">After building HLODs for each map, the tool flags modifications, saves newly created assets, and forces Garbage Collection to prevent memory leaks or crashes when handling large projects.</span>
+                        </p>
+                    </li>
+                    <li>
+                        <strong style="color: var(--text-heading);">
+                            <span class="lang-pt">Pós-Processamento Automático:</span>
+                            <span class="lang-en">Automatic Post-Processing:</span>
+                        </strong>
+                        <p style="margin-top: 5px; color: #8b949e;">
+                            <span class="lang-pt">Assim que toda a fila é concluída, o sistema redireciona e vincula automaticamente os proxies gerados aos seus respectivos níveis.</span>
+                            <span class="lang-en">Once the entire queue finishes, the system automatically redirects and binds generated proxies to their corresponding levels.</span>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Principais Benefícios -->
+            <div class="skill-category">
+                <h3><i data-lucide="sparkles"></i> 
+                    <span class="lang-pt">Principais Benefícios</span>
+                    <span class="lang-en">Key Benefits</span>
+                </h3>
+                <ul style="margin-top: 15px;">
+                    <li style="margin-bottom: 12px;">
+                        <strong style="color: var(--text-heading);">
+                            <span class="lang-pt">Produtividade:</span>
+                            <span class="lang-en">Productivity:</span>
+                        </strong> 
+                        <span class="lang-pt">Transforma uma tarefa manual demorada em um processo automatizado de "um clique" (ou overnight build).</span>
+                        <span class="lang-en">Converts a time-consuming manual task into a one-click automated process (or overnight build).</span>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <strong style="color: var(--text-heading);">
+                            <span class="lang-pt">Integração com Editor Utility (Blueprints):</span>
+                            <span class="lang-en">Editor Utility Integration (Blueprints):</span>
+                        </strong> 
+                        <span class="lang-pt">Exposto como <code>UBlueprintFunctionLibrary</code>, permitindo a criação de interfaces de UI no Editor para a equipe de arte e level design.</span>
+                        <span class="lang-en">Exposed as a <code>UBlueprintFunctionLibrary</code>, enabling custom Editor UIs for art and level design teams.</span>
+                    </li>
+                    <li style="margin-bottom: 12px;">
+                        <strong style="color: var(--text-heading);">
+                            <span class="lang-pt">Segurança de Pipeline:</span>
+                            <span class="lang-en">Pipeline Reliability:</span>
+                        </strong> 
+                        <span class="lang-pt">Garante que todas as configurações de HLOD sigam o mesmo padrão em todos os mapas do projeto sem dependência de intervenção humana individual.</span>
+                        <span class="lang-en">Ensures consistent HLOD configurations across all project maps without relying on individual manual steps.</span>
+                    </li>
+                    <li>
+                        <strong style="color: var(--text-heading);">Croak Tales:</strong> 
+                        <span class="lang-pt">Todos os mapas de Croak Tales têm seus HLODs gerados por essa ferramenta; cada usuário utiliza seu próprio DataAsset para rodar o build durante a noite.</span>
+                        <span class="lang-en">All Croak Tales maps generate HLODs using this tool; each developer uses their own DataAsset to run overnight builds.</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container contact-container">
+            <h2 class="section-title">
+                <span class="lang-pt">Gostou deste breakdown?</span>
+                <span class="lang-en">Enjoyed this breakdown?</span>
+            </h2>
+            <p>
+                <span class="lang-pt">Entre em contato para saber mais sobre automações de pipeline e ferramentas de renderização/otimização.</span>
+                <span class="lang-en">Get in touch to learn more about pipeline automation and rendering/optimization tools.</span>
+            </p>
+            <div class="contact-links">
+                <a href="mailto:contato.megalos@gmail.com" class="contact-btn"><i data-lucide="mail"></i> Email</a>
+                <a href="https://www.linkedin.com/in/raaelm/" target="_blank" class="contact-btn"><i data-lucide="linkedin"></i> LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <span class="lang-pt">&copy; 2026 Technical Artist. Todos os direitos reservados.</span>
+                <span class="lang-en">&copy; 2026 Technical Artist. All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="main/script.js"></script>
+</body>
+</html>

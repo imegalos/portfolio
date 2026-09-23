@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Environment Manager | Technical Artist Portfolio</title>
+    <link rel="stylesheet" href="main/style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="main.html" class="logo">&lt;<span class="highlight">TechArt</span> /&gt;</a>
+            <nav class="nav-menu">
+                <a href="main.html#projects" class="nav-link">
+                    <span class="lang-pt">&larr; Voltar aos Projetos</span>
+                    <span class="lang-en">&larr; Back to Projects</span>
+                </a>
+                <a href="main.html#contact" class="nav-link btn-contact">
+                    <span class="lang-pt">Contato</span>
+                    <span class="lang-en">Contact</span>
+                </a>
+                <button class="lang-toggle-btn nav-link" onclick="toggleLanguage()" style="background:none; border:1px solid var(--border-color); padding: 4px 10px; border-radius: 4px; cursor: pointer; color: var(--text-heading); font-weight: bold; margin-left: 10px;">EN</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container project-detail-content" style="padding-top: 120px; padding-bottom: 80px;">
+        <header class="detail-header" style="text-align: center; margin-bottom: 40px;">
+            <span class="card-tag" style="font-family: var(--font-mono); color: var(--accent-purple); font-size: 0.9rem;">Unreal Engine / Tooling, Editor Utility Widget & Procedural Decor</span>
+            <h1 class="hero-title" style="font-size: 2.5rem; color: var(--text-heading); margin: 15px 0;">
+                <span class="lang-pt">Sistema de Decor Procedural & Modularidade de Cenário</span>
+                <span class="lang-en">Procedural Decor & Modular Environment System</span>
+            </h1>
+            <p class="hero-subtitle" style="max-width: 800px; margin: 0 auto; color: #8b949e;">
+                <span class="lang-pt">Ferramenta de autoramento e gerenciamento procedural de adereços (decor/props) para cenários. Funciona como uma camada de variação sobre a geometria base das salas, spawnando dinamicamente malhas, armadilhas e Blueprints interativos por quadrante.</span>
+                <span class="lang-en">Procedural decor and prop authoring tool for environments. Acts as a variation layer over base room geometry, dynamically spawning meshes, traps, and interactive Blueprints per quadrant.</span>
+            </p>
+        </header>
+
+        <!-- Container da Mídia do Projeto -->
+        <section class="project-media-container" style="margin: 40px 0; text-align: center; display: flex; justify-content: center;">
+            <img src="imgs/modulesCreator.gif" alt="Demonstração do Environment Manager" class="project-image" style="width: 800px; max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.3); object-fit: cover;">
+        </section>
+
+        <!-- Funcionalidades & Lógica da Arquitetura -->
+        <section class="detail-section" style="background-color: var(--card-bg); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 40px;">
+            <h2 style="color: var(--text-heading); margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                <span class="lang-pt">Como Funciona & Lógica da Arquitetura</span>
+                <span class="lang-en">How It Works & Architectural Logic</span>
+            </h2>
+            
+            <div style="display: grid; gap: 25px;">
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">1. Variação Determinística por Quadrante & Seed</span>
+                        <span class="lang-en">1. Deterministic Quadrant & Seed Variation</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Em vez de criar dezenas de variações manuais de um mesmo mapa no Editor, cada quadrante seleciona dinamicamente seu módulo visual combinando a Seed global da partida com a posição do quadrante no grid. Isso garante diversidade ambiental massiva com uso mínimo de memória e arquivos de mapa.</span>
+                        <span class="lang-en">Instead of manually building dozens of map variations, each quadrant dynamically selects visual modules by combining the match's global Seed with grid positions. This yields high environment diversity with minimal memory footprint.</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">2. Fluxo de Autoramento via Editor Utility Widget (EUW)</span>
+                        <span class="lang-en">2. Authoring Workflow via Editor Utility Widget (EUW)</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">Para dar autonomia total à equipe de arte sem depender de código, foi criada uma interface customizada no Editor (EUW_ModulesCreator). Os Environment Artists podem montar layouts de mobílias, armadilhas e pontos de coleta no próprio espaço 3D e salvá-los diretamente na estrutura do ator de gerenciamento (BP_EnvironmentManager).</span>
+                        <span class="lang-en">To grant artists full autonomy without code dependencies, a custom Editor UI (EUW_ModulesCreator) was developed. Environment Artists assemble furniture, traps, and loot points in 3D space and save them directly into the manager actor structure (BP_EnvironmentManager).</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">3. Gerenciamento de Layouts & Edição Não-Destrutiva</span>
+                        <span class="lang-en">3. Layout Management & Non-Destructive Editing</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">A ferramenta permite aos artistas carregar, selecionar, sobrescrever e visualizar conjuntos (maines) de mobílias em tempo de execução dentro do Editor. Ela isola e limpa os objetos de teste automaticamente, garantindo que o mapa permaneça limpo e otimizado no controle de versão.</span>
+                        <span class="lang-en">The tool lets artists load, select, overwrite, and preview prop collections in the Editor. It automatically cleans test objects to ensure maps remain clean and source-control friendly.</span>
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--accent-blue); margin-bottom: 8px;">
+                        <span class="lang-pt">4. Hierarquia e Spawning Dinâmico em Tempo de Execução</span>
+                        <span class="lang-en">4. Runtime Dynamic Spawning Hierarchy</span>
+                    </h3>
+                    <p>
+                        <span class="lang-pt">No jogo final, a ferramenta é disparada logo após a fase de montagem das salas. Ela lê as tabelas de layouts salvas nos atores de cada quadrante e orquestra o surgimento (spawning) de todos os elementos decorativos e interativos correspondentes de forma automatizada.</span>
+                        <span class="lang-en">In-game, the tool executes immediately following room layout assembly. It reads stored layout tables per quadrant and orchestrates automated spawning of all matching decorative and gameplay elements.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destaques de Produção & Otimização -->
+        <section class="detail-section" style="background-color: var(--bg-alt); padding: 30px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 40px;">
+            <h2 style="color: var(--text-heading); margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">
+                <span class="lang-pt">Destaques de Produção & Boas Práticas de Pipeline</span>
+                <span class="lang-en">Production & Pipeline Best Practices</span>
+            </h2>
+            
+            <ul style="list-style-type: none; padding-left: 0; display: grid; gap: 15px;">
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Otimização de Assets e Redução de Duplicata:</span>
+                        <span class="lang-en">Asset Optimization & Duplicate Reduction:</span>
+                    </strong> 
+                    <span class="lang-pt">Evita o consumo excessivo de memória ao reutilizar salas base limpas, alterando apenas a "camada de recheio" (props e gameplay actors) em cada partida.</span>
+                    <span class="lang-en">Prevents memory bloating by reusing clean base room geometry and only swapping prop/gameplay layers each match.</span>
+                </li>
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Autonomia e Segurança de Artistas:</span>
+                        <span class="lang-en">Artist Autonomy & Safety:</span>
+                    </strong> 
+                    <span class="lang-pt">O Editor Utility Widget encapsula a complexidade do C++/Blueprint por trás de uma interface amigável, permitindo iterações rápidas e correções fáceis de bugs de layout sem riscos de corromper a lógica procedural principal.</span>
+                    <span class="lang-en">The EUW abstracts C++/Blueprint complexity behind a user-friendly panel, enabling fast iterations and layout bug fixes without risking main procedural logic.</span>
+                </li>
+                <li style="position: relative; padding-left: 25px;">
+                    <strong style="color: var(--text-heading);">
+                        <span class="lang-pt">Flexibilidade Visual:</span>
+                        <span class="lang-en">Visual Flexibility:</span>
+                    </strong> 
+                    <span class="lang-pt">Transforma ambientes com a mesma geometria estrutural em salas completamente distintas visual e taticamente (ex: uma sala pode spawnar cheia de armadilhas, enquanto outra variante do mesmo quadrante vira uma sala de baús ou dormitório).</span>
+                    <span class="lang-en">Transforms rooms sharing structural geometry into visually and tactically distinct spaces (e.g., a trap room vs. a treasure room variant).</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Ações do Rodapé do Projeto -->
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="main.html#projects" class="btn secondary-btn">
+                <span class="lang-pt">&larr; Voltar para a Galeria</span>
+                <span class="lang-en">&larr; Back to Gallery</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <span class="lang-pt">&copy; 2026 Technical Artist. Todos os direitos reservados.</span>
+                <span class="lang-en">&copy; 2026 Technical Artist. All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+
+    <script src="main/script.js"></script>
+</body>
+</html>
