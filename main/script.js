@@ -87,3 +87,96 @@ function toggleLanguage() {
     const newLang = currentLang === 'en' ? 'pt' : 'en';
     setLanguage(newLang);
 }
+
+let currentIndex = 0;
+const players = []; // Armazena as instâncias dos players do Vimeo
+
+function initVimeoPlayers() {
+    const iframes = document.querySelectorAll('.vimeo-responsive-wrapper iframe');
+    
+    iframes.forEach((iframe, index) => {
+        // Inicializa cada player com a API do Vimeo
+        const player = new Vimeo.Player(iframe);
+        players[index] = player;
+    });
+}
+
+function updateCarousel() {
+    const slides = document.querySelectorAll('.vimeo-slide');
+    const totalSlides = slides.length;
+
+    if (totalSlides === 0) return;
+
+    slides.forEach((slide, index) => {
+        // Limpa todas as classes de estado 3D
+        slide.classList.remove('active', 'prev', 'next');
+
+        if (index === currentIndex) {
+            slide.classList.add('active');
+            
+            // Dá play no vídeo que entrou em foco
+            if (players[index]) {
+                players[index].play().catch((error) => {
+                    // Trata políticas de Autoplay dos navegadores caso bloqueiem áudio
+                    console.warn('Autoplay bloqueado pelo navegador:', error);
+                });
+            }
+        } else {
+            if (index === (currentIndex - 1 + totalSlides) % totalSlides) {
+                slide.classList.add('prev');
+            } else if (index === (currentIndex + 1) % totalSlides) {
+                slide.classList.add('next');
+            }
+            
+            // Pausa qualquer outro vídeo que não esteja em foco
+            if (players[index]) {
+                players[index].pause();
+            }
+        }
+    });
+
+    updateIndicators();
+}
+
+function moveCarousel(direction) {
+    const slides = document.querySelectorAll('.vimeo-slide');
+    const totalSlides = slides.length;
+    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+    updateCarousel();
+}
+
+function createIndicators() {
+    const container = document.getElementById('vimeoIndicators');
+    const slides = document.querySelectorAll('.vimeo-slide');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    slides.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('indicator-dot');
+        if (index === currentIndex) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel();
+        });
+        container.appendChild(dot);
+    });
+}
+
+function updateIndicators() {
+    const dots = document.querySelectorAll('.indicator-dot');
+    dots.forEach((dot, index) => {
+        if (index === currentIndex) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+// Inicializa quando a página e scripts carregam
+document.addEventListener('DOMContentLoaded', () => {
+    initVimeoPlayers();
+    createIndicators();
+    updateCarousel();
+});

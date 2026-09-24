@@ -778,3 +778,200 @@ a:hover {
   padding: 4px 12px;
   border-radius: 20px;
 }
+
+/* ==========================================================================
+   Vimeo 3D Coverflow / Carousel Layout
+   ========================================================================== */
+
+.vimeo-carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.vimeo-carousel-stage {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.vimeo-carousel-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.vimeo-slide {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 680px;
+    max-width: 85%;
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+                opacity 0.5s ease, 
+                filter 0.5s ease, 
+                visibility 0.5s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Card Container interno */
+.vimeo-card {
+    border-radius: var(--radius-md);
+    background: var(--card-bg); /* Corrigido para utilizar a variável do seu :root */
+    border: 1px solid var(--card-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.vimeo-responsive-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.vimeo-responsive-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.vimeo-video-info {
+    padding: 1rem 1.25rem;
+    background: rgba(15, 22, 36, 0.95);
+}
+
+.vimeo-video-info h3 {
+    margin: 0 0 0.4rem 0;
+    font-size: 1.1rem;
+    color: var(--text-heading);
+}
+
+.vimeo-video-info p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-color);
+}
+
+/* --- ESTADOS 3D DO CARROSSEL --- */
+
+/* Slide Ativo (Centro) */
+.vimeo-slide.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+    filter: blur(0px);
+    pointer-events: auto;
+}
+
+/* Slide Esquerdo (Anterior Desfocado) */
+.vimeo-slide.prev {
+    transform: translate(-110%, -50%) scale(0.8);
+    opacity: 0.45;
+    visibility: visible;
+    z-index: 5;
+    filter: blur(4px);
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+/* Slide Direito (Próximo Desfocado) */
+.vimeo-slide.next {
+    transform: translate(10%, -50%) scale(0.8);
+    opacity: 0.45;
+    visibility: visible;
+    z-index: 5;
+    filter: blur(4px);
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+/* Hover nos cards laterais */
+.vimeo-slide.prev:hover,
+.vimeo-slide.next:hover {
+    opacity: 0.75;
+    filter: blur(1px);
+}
+
+/* Botões de Navegação */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(15, 22, 36, 0.85);
+    border: 1px solid var(--border-color);
+    color: #fff;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: var(--transition-fast);
+}
+
+.carousel-arrow:hover {
+    background: var(--accent-blue);
+    color: #080c14;
+    box-shadow: 0 0 15px var(--glow-blue);
+}
+
+.prev-arrow { left: 10px; }
+.next-arrow { right: 10px; }
+
+/* Dots Indicadores */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.indicator-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-color);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.indicator-dot.active {
+    background: var(--accent-blue);
+    width: 24px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--glow-blue);
+}
+
+/* Ajustes Responsivos */
+@media (max-width: 900px) {
+    .vimeo-slide {
+        width: 90%;
+    }
+    .vimeo-slide.prev {
+        transform: translate(-125%, -50%) scale(0.7);
+        opacity: 0.2;
+    }
+    .vimeo-slide.next {
+        transform: translate(25%, -50%) scale(0.7);
+        opacity: 0.2;
+    }
+}

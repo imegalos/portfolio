@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="main/style.css">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Script oficial da API de Player do Vimeo -->
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="main/script.js"></script>
 </head>
 <body>
 
@@ -147,6 +150,112 @@
 
         </div>
     </div>
+    </section>
+
+    <!-- Vimeo Showcases / Video Carousel Section -->
+    <section id="vimeo-showcase" class="section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="lang-pt"><span class="gradient-text">Demonstrações</span></span>
+                <span class="lang-en"><span class="gradient-text">Showcases</span></span>
+            </h2>
+
+            <!-- Carrossel de Vídeos com Efeito Lateral 3D -->
+            <div class="vimeo-carousel-container">
+                <button class="carousel-arrow prev-arrow" onclick="moveCarousel(-1)" aria-label="Anterior">
+                    <i data-lucide="chevron-left"></i>
+                </button>
+
+                <div class="vimeo-carousel-stage">
+                    <div class="vimeo-carousel-track" id="vimeoTrack">
+
+                        <!-- SLIDE 1 -->
+                        <div class="vimeo-slide" data-index="0">
+                            <div class="vimeo-card">
+                                <div class="vimeo-responsive-wrapper">
+                                    <iframe src="https://player.vimeo.com/video/1152848198?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="vimeo-video-info">
+                                    <h3>
+                                        <span class="lang-pt">Garota das Luvas - Showcase</span>
+                                        <span class="lang-en">Gloves Girl - Showcase</span>
+                                    </h3>
+                                    <p>
+                                        <span class="lang-pt">Demonstração dos materiais utilizados para criação de efeitos realistas.</span>
+                                        <span class="lang-en">Showcase of PBR materials made in Unreal Engine 5.</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 2 -->
+                        <div class="vimeo-slide" data-index="1">
+                            <div class="vimeo-card">
+                                <div class="vimeo-responsive-wrapper">
+                                    <iframe src="https://player.vimeo.com/video/1152887145?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="vimeo-video-info">
+                                    <h3>
+                                        <span class="lang-pt">Viajante do Deserto</span>
+                                        <span class="lang-en">Desert Traveler</span>
+                                    </h3>
+                                    <p>
+                                        <span class="lang-pt">Criação de materiais para detalhes em tempo-real com baixo custo de shader complexity.</span>
+                                        <span class="lang-en">Material creation for real-time details with low shader complexity cost.</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 3 -->
+                        <div class="vimeo-slide" data-index="2">
+                            <div class="vimeo-card">
+                                <div class="vimeo-responsive-wrapper">
+                                    <iframe src="https://player.vimeo.com/video/1152850085?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="vimeo-video-info">
+                                    <h3>
+                                        <span class="lang-pt">Scrabomb</span>
+                                        <span class="lang-en">Scrabomb</span>
+                                    </h3>
+                                    <p>
+                                        <span class="lang-pt">Efeito de explosão de baixo impacto na GPU.</span>
+                                        <span class="lang-en">Low GPU overhead explosion particle effect.</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 4 -->
+                        <div class="vimeo-slide" data-index="3">
+                            <div class="vimeo-card">
+                                <div class="vimeo-responsive-wrapper">
+                                    <iframe src="https://player.vimeo.com/video/1152886745?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                <div class="vimeo-video-info">
+                                    <h3>
+                                        <span class="lang-pt">Shaders UI</span>
+                                        <span class="lang-en">UI Shaders</span>
+                                    </h3>
+                                    <p>
+                                        <span class="lang-pt">UI e Efeitos de tela criados na Unreal Engine 5.</span>
+                                        <span class="lang-en">UI and screen-space effects created in Unreal Engine 5.</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="carousel-arrow next-arrow" onclick="moveCarousel(1)" aria-label="Próximo">
+                    <i data-lucide="chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Indicadores / Dots -->
+            <div class="carousel-indicators" id="vimeoIndicators"></div>
+        </div>
     </section>
 
     <!-- Skills Section -->
