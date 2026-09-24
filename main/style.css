@@ -118,10 +118,15 @@ a:hover {
 /* Efeito de Zoom quando o mouse passa por cima */
 .video-zoom-container:hover {
   /* Aumenta o vídeo em 5% (ajuste 1.05 para 1.08 ou 1.1 se quiser um zoom maior) */
-  transform: scale(2.2); 
+  transform: scale(1.5); 
   /* Opcional: Aumenta o brilho da sombra para destacar */
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 25px var(--glow-blue);
   border-color: rgba(56, 189, 248, 0.5);
+}
+
+.image-zoom:hover {
+  /* Aumenta o vídeo em 5% (ajuste 1.05 para 1.08 ou 1.1 se quiser um zoom maior) */
+  transform: scale(1.85); 
 }
 
 .click-blocker {
