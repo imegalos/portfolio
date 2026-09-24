@@ -1,16 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializar os ícones da biblioteca Lucide
-    if (window.lucide) {
+    // 1. Configuração e Aplicação do Idioma
+    const savedLang = localStorage.getItem('preferred_lang');
+    const browserLang = navigator.language || navigator.userLanguage;
+    const defaultLang = savedLang || (browserLang.startsWith('en') ? 'en' : 'pt');
+
+    setLanguage(defaultLang);
+
+    // 2. Inicializar os ícones da biblioteca Lucide
+    if (window.lucide || typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
 
-    // Filtros da Galeria de Projetos
+    // 3. Filtros da Galeria de Projetos
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Remover classe ativa dos outros botões
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
@@ -32,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Smooth Scroll para navegação interna
+    // 4. Smooth Scroll para navegação interna
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -51,40 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. Idioma padrão pelo navegador ou preferência salva
-    const savedLang = localStorage.getItem('preferred_lang');
-    const browserLang = navigator.language || navigator.userLanguage;
-    const defaultLang = savedLang || (browserLang.startsWith('en') ? 'en' : 'pt');
-
-    setLanguage(defaultLang);
-
-    // Initialize Lucide Icons if available
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
-
-    // 2. Filtro dos projetos (main.html)
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const filter = btn.getAttribute('data-filter');
-            projectCards.forEach(card => {
-                if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    });
-});
-
+// Funções de Controle de Idioma
 function setLanguage(lang) {
     localStorage.setItem('preferred_lang', lang);
     document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
